@@ -1,0 +1,31 @@
+metadata:
+  name: code
+  components: {}
+  componentSets: {}
+nodes:
+  - id: 1:1882
+    name: 发送
+    type: TEXT
+    layout: layout_GU70PN
+    text: 发送
+    textStyle: style_95LR72
+    fills: fill_Z8BKCR
+globalVars:
+  styles:
+    layout_GU70PN:
+      mode: none
+      sizing: {}
+      dimensions:
+        width: 56
+        height: 29
+    style_95LR72:
+      fontFamily: Alibaba PuHuiTi 2.0
+      fontStyle: 55 Regular
+      fontWeight: 400
+      fontSize: 28.44444465637207
+      lineHeight: 28.44px
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+      paragraphSpacing: 14.222222328186035
+    fill_Z8BKCR:
+      - '#FFFFFF'

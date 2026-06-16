@@ -1,0 +1,8 @@
+Usage telemetry enabled. Disable: FRAMELINK_TELEMETRY=off or DO_NOT_TRACK=1
+Warning: --image-dir not set; download_figma_images will save under the server's cwd (C:\Users\Asus\Desktop\hermes-webui-figma). MCP clients often launch the server outside your project root — set IMAGE_DIR or pass --image-dir to make this explicit.
+[INFO] Fetching all layers of node 1:1881 from file j43TBYc4ydHZSkDTXbGsc2
+[INFO] Retrieving raw Figma node: 1:1881 from j43TBYc4ydHZSkDTXbGsc2 (depth: default)
+[INFO] Calling https://api.figma.com/v1/files/j43TBYc4ydHZSkDTXbGsc2/nodes?ids=1:1881
+[INFO] Using Personal Access Token for authentication
+[INFO] Successfully extracted data: 1 nodes
+[INFO] Sending result to client

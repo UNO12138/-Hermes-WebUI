@@ -1,0 +1,30 @@
+metadata:
+  name: code
+  components: {}
+  componentSets: {}
+nodes:
+  - id: 1:1864
+    name: Frame
+    type: IMAGE-SVG
+    layout: layout_6FVGO8
+    fills: fill_RA41KQ
+globalVars:
+  styles:
+    layout_6FVGO8:
+      mode: none
+      sizing: {}
+      dimensions:
+        width: 28.44
+        height: 28.44
+    fill_RA41KQ: []
+    layout_L9IWZU:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 4.28
+        y: 5.47
+      dimensions:
+        width: 20.62
+        height: 18.11
+    fill_RGDX5T:
+      - '#999999'

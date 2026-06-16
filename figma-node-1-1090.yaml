@@ -1,0 +1,2045 @@
+metadata:
+  name: code
+  components: {}
+  componentSets: {}
+nodes:
+  - id: 1:1090
+    name: Frame 279
+    type: FRAME
+    layout: layout_LMV654
+    fills: fill_763SCJ
+    children:
+      - id: 15:13
+        name: Group 82
+        type: GROUP
+        layout: layout_PSDJ5O
+        children:
+          - id: 1:1091
+            name: Rectangle 512
+            type: RECTANGLE
+            layout: layout_D958NX
+            fills: fill_EWSS7M
+            strokes: fill_V8WI2L
+            strokeWeight: 1px
+          - id: 1:1250
+            name: Figma网页设计画板尺寸建议
+            type: TEXT
+            layout: layout_BP4NWE
+            text: Figma网页设计画板尺寸建议
+            textStyle: style_KRG7NW
+            fills: fill_21PPRX
+      - id: 1:1092
+        name: Vector 128
+        type: IMAGE-SVG
+        layout: layout_WII0U6
+      - id: 1:1093
+        name: Frame
+        type: IMAGE-SVG
+        layout: layout_S0ZP7H
+        fills: fill_EV2946
+      - id: 1:1095
+        name: Vector 129
+        type: IMAGE-SVG
+        layout: layout_24PU3X
+        strokes: fill_V8WI2L
+        strokeWeight: 1px
+      - id: 1:1096
+        name: Frame
+        type: IMAGE-SVG
+        layout: layout_UXNV4I
+        fills: fill_EV2946
+      - id: 1:1101
+        name: deepseek-v4-pro
+        type: TEXT
+        layout: layout_FIFCJ2
+        text: deepseek-v4-pro
+        textStyle: style_CYGWVC
+        fills: fill_21PPRX
+      - id: 1:1102
+        name: Frame
+        type: IMAGE-SVG
+        layout: layout_7QQKM0
+        fills: fill_EV2946
+      - id: 11:6
+        name: Group 75
+        type: GROUP
+        layout: layout_263ML8
+        children:
+          - id: 1:1137
+            name: Frame
+            type: IMAGE-SVG
+            layout: layout_WRINU9
+            fills: fill_EV2946
+          - id: 1:1152
+            name: terminal
+            type: TEXT
+            layout: layout_N2N115
+            text: terminal
+            textStyle: style_HIFFB0
+            fills: fill_DYPR8W
+      - id: 11:7
+        name: Group 76
+        type: GROUP
+        layout: layout_BWJH4S
+        children:
+          - id: 1:1139
+            name: Frame
+            type: IMAGE-SVG
+            layout: layout_WRINU9
+            fills: fill_EV2946
+          - id: 1:1153
+            name: terminal
+            type: TEXT
+            layout: layout_N2N115
+            text: terminal
+            textStyle: style_HIFFB0
+            fills: fill_DYPR8W
+      - id: 11:8
+        name: Group 77
+        type: GROUP
+        layout: layout_IGUBHJ
+        children:
+          - id: 1:1141
+            name: Frame
+            type: IMAGE-SVG
+            layout: layout_WRINU9
+            fills: fill_EV2946
+          - id: 1:1154
+            name: terminal
+            type: TEXT
+            layout: layout_N2N115
+            text: terminal
+            textStyle: style_HIFFB0
+            fills: fill_DYPR8W
+      - id: 11:11
+        name: Group 80
+        type: GROUP
+        layout: layout_2VWN0X
+        children:
+          - id: 1:1143
+            name: Frame
+            type: IMAGE-SVG
+            layout: layout_WRINU9
+            fills: fill_EV2946
+          - id: 1:1155
+            name: terminal
+            type: TEXT
+            layout: layout_N2N115
+            text: terminal
+            textStyle: style_HIFFB0
+            fills: fill_DYPR8W
+      - id: 11:9
+        name: Group 78
+        type: GROUP
+        layout: layout_DYOW3U
+        children:
+          - id: 1:1145
+            name: Frame
+            type: IMAGE-SVG
+            layout: layout_WRINU9
+            fills: fill_EV2946
+          - id: 1:1156
+            name: skill_view
+            type: TEXT
+            layout: layout_C14MQH
+            text: skill\_view
+            textStyle: style_HIFFB0
+            fills: fill_DYPR8W
+      - id: 11:10
+        name: Group 79
+        type: GROUP
+        layout: layout_43KJDE
+        children:
+          - id: 1:1147
+            name: Frame
+            type: IMAGE-SVG
+            layout: layout_WRINU9
+            fills: fill_EV2946
+          - id: 1:1157
+            name: skill_view
+            type: TEXT
+            layout: layout_C14MQH
+            text: skill\_view
+            textStyle: style_HIFFB0
+            fills: fill_DYPR8W
+      - id: 11:4
+        name: Group 73
+        type: GROUP
+        layout: layout_WCF1ZZ
+        borderRadius: 0px 0px 0px 0px
+        children:
+          - id: 1:1126
+            name: image 497
+            type: RECTANGLE
+            layout: layout_98VD6D
+            fills: fill_O8BKA5
+            borderRadius: 99px
+          - id: 1:1129
+            name: Rectangle 539
+            type: RECTANGLE
+            layout: layout_WSS002
+            fills: fill_DVKW9D
+            borderRadius: 6px
+          - id: 1:1133
+            name: Frame
+            type: IMAGE-SVG
+            layout: layout_LXC4FZ
+            fills: fill_EV2946
+          - id: 1:1150
+            name: 思考过程 · 291字
+            type: TEXT
+            layout: layout_LJIC8Q
+            text: 思考过程 · 291字
+            textStyle: style_G29O0A
+            fills: fill_DYPR8W
+          - id: 1:1161
+            name: 问题找到了:Hermes Web UI 自带了 Node.js v22.22.2，不受系统 nvm影响。
+            type: TEXT
+            layout: layout_DALQDS
+            text: 问题找到了:Hermes Web UI 自带了 Node.js v22.22.2，不受系统 nvm影响。
+            textStyle: style_G29O0A
+            fills: fill_21PPRX
+          - id: 1:1164
+            name: Vector 136
+            type: IMAGE-SVG
+            layout: layout_XMIDV1
+            strokes: fill_V8WI2L
+            strokeWeight: 0.5px
+      - id: 11:3
+        name: Group 72
+        type: GROUP
+        layout: layout_13K3OM
+        borderRadius: 0px 0px 0px 0px
+        children:
+          - id: 1:1127
+            name: image 498
+            type: RECTANGLE
+            layout: layout_98VD6D
+            fills: fill_O8BKA5
+            borderRadius: 99px
+          - id: 1:1130
+            name: Rectangle 540
+            type: RECTANGLE
+            layout: layout_A6DTTF
+            fills: fill_DVKW9D
+            borderRadius: 6px
+          - id: 1:1135
+            name: Frame
+            type: IMAGE-SVG
+            layout: layout_LXC4FZ
+            fills: fill_EV2946
+          - id: 1:1151
+            name: 思考过程 · 291字
+            type: TEXT
+            layout: layout_LJIC8Q
+            text: 思考过程 · 291字
+            textStyle: style_G29O0A
+            fills: fill_DYPR8W
+          - id: 1:1162
+            name: 问题清楚了。Hermes Web UI 自带了一个独立的 Node.js v22.22.2（~/.hermes/node/），Web UI v0.6.5+ 要求 Node ≥ 23 才会报警告。需要替换这个内置的 Node.js。
+            type: TEXT
+            layout: layout_J3OOSO
+            text: 问题清楚了。Hermes Web UI 自带了一个独立的 Node.js v22.22.2（\~/.hermes/node/），Web UI v0.6.5+ 要求 Node ≥ 23 才会报警告。需要替换这个内置的 Node.js。
+            textStyle: style_G29O0A
+            fills: fill_21PPRX
+          - id: 1:1165
+            name: Vector 137
+            type: IMAGE-SVG
+            layout: layout_XMIDV1
+            strokes: fill_V8WI2L
+            strokeWeight: 0.5px
+      - id: 11:12
+        name: Group 81
+        type: GROUP
+        layout: layout_A0NYP5
+        borderRadius: 0px 0px 0px 0px
+        children:
+          - id: 1:1123
+            name: Rectangle 537
+            type: RECTANGLE
+            layout: layout_JPEWMW
+            fills: fill_DVKW9D
+            borderRadius: 8px
+          - id: 1:1124
+            name: 为啥WebUI还是显示版本落后
+            type: TEXT
+            layout: layout_6HLOSQ
+            text: 为啥WebUI还是显示版本落后
+            textStyle: style_G29O0A
+            fills: fill_21PPRX
+          - id: 1:1159
+            name: 21:25
+            type: TEXT
+            layout: layout_D5K9EW
+            text: 21:25
+            textStyle: style_9CDOC5
+            fills: fill_YLLEZ8
+          - id: 1:1169
+            name: Frame
+            type: IMAGE-SVG
+            layout: layout_XDLV0G
+            fills: fill_EV2946
+      - id: 11:5
+        name: Group 74
+        type: GROUP
+        layout: layout_HRC7AL
+        borderRadius: 0px 0px 0px 0px
+        children:
+          - id: 1:1125
+            name: image 496
+            type: RECTANGLE
+            layout: layout_98VD6D
+            fills: fill_O8BKA5
+            borderRadius: 99px
+          - id: 1:1128
+            name: Rectangle 538
+            type: RECTANGLE
+            layout: layout_J7EHLN
+            fills: fill_DVKW9D
+            borderRadius: 6px
+          - id: 1:1131
+            name: Frame
+            type: IMAGE-SVG
+            layout: layout_LXC4FZ
+            fills: fill_EV2946
+          - id: 1:1149
+            name: 思考过程 · 404字
+            type: TEXT
+            layout: layout_LJIC8Q
+            text: 思考过程 · 404字
+            textStyle: style_G29O0A
+            fills: fill_DYPR8W
+          - id: 1:1158
+            name: 21:25
+            type: TEXT
+            layout: layout_OY8J4I
+            text: 21:25
+            textStyle: style_9CDOC5
+            fills: fill_YLLEZ8
+          - id: 1:1160
+            name: "找到了！Hermes Web UI 用的是自己\_内置的 Node.js，不是你系统的 Node.js。"
+            type: TEXT
+            layout: layout_T34HCR
+            text: "找到了！Hermes Web UI 用的是自己\_内置的 Node.js，不是你系统的 Node.js。 "
+            textStyle: style_G29O0A
+            fills: fill_21PPRX
+          - id: 1:1163
+            name: Vector 135
+            type: IMAGE-SVG
+            layout: layout_20IST1
+            strokes: fill_V8WI2L
+            strokeWeight: 0.5px
+          - id: 1:1166
+            name: Frame
+            type: IMAGE-SVG
+            layout: layout_HWW0IX
+            fills: fill_EV2946
+          - id: 1:1172
+            name: Frame
+            type: IMAGE-SVG
+            layout: layout_J1LVCF
+            fills: fill_EV2946
+      - id: 11:2
+        name: Group 71
+        type: GROUP
+        layout: layout_812G8Z
+        borderRadius: 0px 0px 0px 0px
+        children:
+          - id: 1:1107
+            name: Rectangle 516
+            type: RECTANGLE
+            layout: layout_79GEVH
+            fills: fill_U2KKFK
+            strokes: fill_V8WI2L
+            strokeWeight: 1px
+            borderRadius: 16px
+          - id: 1:1108
+            name: Rectangle 517
+            type: RECTANGLE
+            layout: layout_JPT5LG
+            fills: fill_763SCJ
+            borderRadius: 12px
+          - id: 1:1109
+            name: 输入信息... (Enter发送，Shift+Enter换行)
+            type: TEXT
+            layout: layout_VBIDLW
+            text: 输入信息... \(Enter发送，Shift+Enter换行\)
+            textStyle: style_L26EAL
+            fills: fill_J8XHKC
+          - id: 1:1110
+            name: Frame
+            type: IMAGE-SVG
+            layout: layout_A0WJTD
+            fills: fill_EV2946
+          - id: 1:1112
+            name: deepseek-v4-pro
+            type: TEXT
+            layout: layout_0MBF3L
+            text: deepseek-v4-pro
+            textStyle: style_G29O0A
+            fills: fill_CJ2A8R
+          - id: 1:1113
+            name: Frame
+            type: IMAGE-SVG
+            layout: layout_KI0FPZ
+            fills: fill_EV2946
+          - id: 1:1115
+            name: Frame
+            type: IMAGE-SVG
+            layout: layout_JRPE8L
+            fills: fill_EV2946
+          - id: 1:1117
+            name: Frame
+            type: IMAGE-SVG
+            layout: layout_ZBJ5CW
+            fills: fill_EV2946
+          - id: 1:1119
+            name: Rectangle 526
+            type: RECTANGLE
+            layout: layout_9YOZVP
+            fills: fill_E0UBZH
+            borderRadius: 99px
+          - id: 1:1120
+            name: Ellipse 40
+            type: ELLIPSE
+            layout: layout_YS0HTV
+            fills: fill_763SCJ
+            effects: effect_6WG42W
+          - id: 1:1121
+            name: Rectangle 535
+            type: RECTANGLE
+            layout: layout_8BWLDK
+            fills: fill_N83ERU
+            borderRadius: 99px
+          - id: 1:1122
+            name: "20.2k /\_1.0M\_· 剩余 979.8k"
+            type: TEXT
+            layout: layout_4MEH4A
+            text: "20.2k /\_1.0M\_· 剩余 979.8k"
+            textStyle: style_G29O0A
+            fills: fill_DYPR8W
+          - id: 1:1176
+            name: Group 34
+            type: IMAGE-SVG
+            layout: layout_5618XW
+            borderRadius: 0px 0px 0px 0px
+          - id: 1:1179
+            name: 显示工具调用
+            type: TEXT
+            layout: layout_6M45DR
+            text: 显示工具调用
+            textStyle: style_HIFFB0
+            fills: fill_763SCJ
+          - id: 1:1180
+            name: Rectangle 536
+            type: RECTANGLE
+            layout: layout_R67TAT
+            fills: fill_D5B28Z
+            borderRadius: 8px
+          - id: 1:1181
+            name: 发送
+            type: TEXT
+            layout: layout_554S9T
+            text: 发送
+            textStyle: style_CYGWVC
+            fills: fill_763SCJ
+          - id: 1:1182
+            name: Frame
+            type: IMAGE-SVG
+            layout: layout_1K4K4E
+            fills: fill_EV2946
+      - id: 1:1185
+        name: Rectangle 510
+        type: RECTANGLE
+        layout: layout_YM5MJT
+        fills: fill_EWSS7M
+      - id: 1:1186
+        name: Frame
+        type: IMAGE-SVG
+        layout: layout_9BDL4S
+        fills: fill_EV2946
+      - id: 1:1189
+        name: Hermes WebUI
+        type: TEXT
+        layout: layout_XTZ6SK
+        text: Hermes WebUI
+        textStyle: style_HO9454
+        fills: fill_21PPRX
+      - id: 1:1190
+        name: 新对话
+        type: TEXT
+        layout: layout_3V493G
+        text: 新对话
+        textStyle: style_HC94D7
+        fills: fill_DYPR8W
+      - id: 1:1191
+        name: 最近对话
+        type: TEXT
+        layout: layout_Y1JF7C
+        text: 最近对话
+        textStyle: style_HC94D7
+        fills: fill_DYPR8W
+      - id: 1:1192
+        name: 任务
+        type: TEXT
+        layout: layout_Y9KVOE
+        text: 任务
+        textStyle: style_HC94D7
+        fills: fill_DYPR8W
+      - id: 1:1193
+        name: 模型
+        type: TEXT
+        layout: layout_T05D5W
+        text: 模型
+        textStyle: style_HC94D7
+        fills: fill_DYPR8W
+      - id: 1:1194
+        name: 记忆
+        type: TEXT
+        layout: layout_95YOFC
+        text: 记忆
+        textStyle: style_HC94D7
+        fills: fill_DYPR8W
+      - id: 1:1195
+        name: 日志
+        type: TEXT
+        layout: layout_EZX6QL
+        text: 日志
+        textStyle: style_HC94D7
+        fills: fill_DYPR8W
+      - id: 1:1196
+        name: Hermes文档
+        type: TEXT
+        layout: layout_YDUMAB
+        text: Hermes文档
+        textStyle: style_HC94D7
+        fills: fill_DYPR8W
+      - id: 1:1197
+        name: 用量监控
+        type: TEXT
+        layout: layout_N35G87
+        text: 用量监控
+        textStyle: style_HC94D7
+        fills: fill_DYPR8W
+      - id: 1:1198
+        name: 查看所有对话
+        type: TEXT
+        layout: layout_PHLPI2
+        text: 查看所有对话
+        textStyle: style_XTNWWO
+        fills: fill_DYPR8W
+      - id: 1:1199
+        name: Frame
+        type: IMAGE-SVG
+        layout: layout_FP9Y0G
+        fills: fill_EV2946
+      - id: 1:1203
+        name: Frame
+        type: IMAGE-SVG
+        layout: layout_SCH3OD
+        fills: fill_EV2946
+      - id: 1:1207
+        name: Rectangle 513
+        type: RECTANGLE
+        layout: layout_5539H9
+        fills: fill_EH9DMJ
+        borderRadius: 8px
+      - id: 1:1208
+        name: Text
+        type: TEXT
+        layout: layout_OUAK2I
+        text: ' '
+        textStyle: style_IPLVT4
+        fills: fill_21PPRX
+      - id: 1:1209
+        name: Figma网页设计画板尺寸...
+        type: TEXT
+        layout: layout_XYZNWB
+        text: Figma网页设计画板尺寸...
+        textStyle: style_XTNWWO
+        fills: fill_21PPRX
+      - id: 1:1210
+        name: DeepSeek本地部署内存...
+        type: TEXT
+        layout: layout_HFZ9AB
+        text: DeepSeek本地部署内存...
+        textStyle: style_XTNWWO
+        fills: fill_21PPRX
+      - id: 1:1211
+        name: 棱镜色散产品应用
+        type: TEXT
+        layout: layout_VRXZ62
+        text: "棱镜色散产品应用\r"
+        textStyle: style_XTNWWO
+        fills: fill_21PPRX
+      - id: 1:1212
+        name: 鸣潮3.4前瞻联动夜之城
+        type: TEXT
+        layout: layout_YCN2XR
+        text: 鸣潮3.4前瞻联动夜之城
+        textStyle: style_XTNWWO
+        fills: fill_21PPRX
+      - id: 1:1213
+        name: Line 24
+        type: LINE
+        layout: layout_65UHX2
+        strokes: fill_V8WI2L
+        strokeWeight: 1px
+      - id: 1:1214
+        name: Ellipse 31
+        type: ELLIPSE
+        layout: layout_TZFLOC
+        fills: fill_N83ERU
+      - id: 1:1215
+        name: Frame
+        type: IMAGE-SVG
+        layout: layout_8J95SM
+        fills: fill_EV2946
+      - id: 1:1217
+        name: 糕冷
+        type: TEXT
+        layout: layout_97L1HI
+        text: 糕冷
+        textStyle: style_XTLTS3
+        fills: fill_CJ2A8R
+      - id: 1:1218
+        name: Frame
+        type: IMAGE-SVG
+        layout: layout_SOM28G
+        fills: fill_EV2946
+      - id: 1:1225
+        name: Frame
+        type: IMAGE-SVG
+        layout: layout_OAUXMM
+        fills: fill_EV2946
+      - id: 1:1230
+        name: Frame
+        type: IMAGE-SVG
+        layout: layout_YDAUYY
+        fills: fill_EV2946
+      - id: 1:1236
+        name: Frame
+        type: IMAGE-SVG
+        layout: layout_N44RGY
+        fills: fill_EV2946
+      - id: 1:1240
+        name: Frame
+        type: IMAGE-SVG
+        layout: layout_PZTRS3
+        fills: fill_EV2946
+      - id: 1:1245
+        name: Frame
+        type: IMAGE-SVG
+        layout: layout_Q3XZSV
+        fills: fill_EV2946
+      - id: 1:1247
+        name: Frame
+        type: IMAGE-SVG
+        layout: layout_YOOJT3
+        fills: fill_EV2946
+globalVars:
+  styles:
+    layout_LMV654:
+      mode: none
+      sizing: {}
+      dimensions:
+        width: 1440
+        height: 720
+    fill_763SCJ:
+      - '#FFFFFF'
+    layout_PSDJ5O:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 190.21
+        y: 0
+      dimensions:
+        width: 1250
+        height: 60
+    layout_D958NX:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        y: 0
+      dimensions:
+        width: 1250
+        height: 60
+    fill_EWSS7M:
+      - '#F9FAFB'
+    fill_V8WI2L:
+      - '#E3E3E3'
+    layout_BP4NWE:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 517
+        y: 19
+      dimensions:
+        width: 215
+        height: 22
+    style_KRG7NW:
+      fontFamily: Alibaba PuHuiTi 2.0
+      fontStyle: 85 Bold
+      fontWeight: 700
+      fontSize: 16
+      letterSpacing: 4%
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    fill_21PPRX:
+      - '#000000'
+    layout_WII0U6:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 190
+        y: 0
+      dimensions:
+        width: 0
+        height: 7720
+    layout_S0ZP7H:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 373
+        y: 22
+      dimensions:
+        width: 16
+        height: 16
+    fill_EV2946: []
+    layout_CWP7CT:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 4
+        y: 6
+      dimensions:
+        width: 8
+        height: 4
+    fill_CJ2A8R:
+      - '#484848'
+    layout_24PU3X:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 190
+        y: 0
+      dimensions:
+        width: 0
+        height: 720
+    layout_UXNV4I:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 206
+        y: 23
+      dimensions:
+        width: 16
+        height: 16
+    layout_M4VBBX:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 2
+        y: 2
+      dimensions:
+        width: 12
+        height: 12
+    layout_EJLE44:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 6
+        y: 2
+      dimensions:
+        width: 0
+        height: 12
+    layout_7YBCM2:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 3.67
+        y: 2
+      dimensions:
+        width: 8.33
+        height: 0
+    layout_0FSNSY:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 3.67
+        y: 14
+      dimensions:
+        width: 8.33
+        height: 0
+    layout_FIFCJ2:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 238
+        y: 22
+      dimensions:
+        width: 131
+        height: 16
+    style_CYGWVC:
+      fontFamily: Alibaba PuHuiTi 2.0
+      fontStyle: 55 Regular
+      fontWeight: 400
+      fontSize: 16
+      lineHeight: 16px
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+      paragraphSpacing: 8
+    layout_7QQKM0:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 1404
+        y: 23
+      dimensions:
+        width: 16
+        height: 16
+    layout_C8D2DT:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 10.67
+        y: 2
+      dimensions:
+        width: 0
+        height: 12
+    layout_06PY7A:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 8.67
+        y: 2
+      dimensions:
+        width: 4
+        height: 0
+    layout_6JOJRL:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 8.67
+        y: 14
+      dimensions:
+        width: 4
+        height: 0
+    layout_263ML8:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 424
+        y: 132
+      dimensions:
+        width: 50
+        height: 16
+    layout_WRINU9:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        y: 4
+      dimensions:
+        width: 8
+        height: 8
+    layout_449WII:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 3.17
+        y: 2
+      dimensions:
+        width: 2
+        height: 4
+    fill_DYPR8W:
+      - '#686868'
+    layout_N2N115:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 10
+        y: 0
+      dimensions:
+        width: 40
+        height: 16
+    style_HIFFB0:
+      fontFamily: Alibaba PuHuiTi 2.0
+      fontStyle: 55 Regular
+      fontWeight: 400
+      fontSize: 10
+      lineHeight: 16px
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+      paragraphSpacing: 8
+    layout_BWJH4S:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 424
+        y: 156
+      dimensions:
+        width: 50
+        height: 16
+    layout_IGUBHJ:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 424
+        y: 272
+      dimensions:
+        width: 50
+        height: 16
+    layout_2VWN0X:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 424
+        y: 436
+      dimensions:
+        width: 50
+        height: 16
+    layout_DYOW3U:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 424
+        y: 388
+      dimensions:
+        width: 56
+        height: 16
+    layout_C14MQH:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 10
+        y: 0
+      dimensions:
+        width: 46
+        height: 16
+    layout_43KJDE:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 424
+        y: 412
+      dimensions:
+        width: 56
+        height: 16
+    layout_WCF1ZZ:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 420
+        y: 300
+      dimensions:
+        width: 465
+        height: 60
+    layout_98VD6D:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        y: 1
+      dimensions:
+        width: 28
+        height: 28
+    fill_O8BKA5:
+      - type: IMAGE
+        imageRef: d52d3d4176f5a3d5e602c73e3dab8a86977691c1
+        scaleMode: FILL
+        objectFit: cover
+        isBackground: false
+        imageDownloadArguments:
+          needsCropping: false
+          requiresImageDimensions: false
+    layout_WSS002:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 32
+        y: 0
+      dimensions:
+        width: 433
+        height: 60
+    fill_DVKW9D:
+      - '#F5F5F5'
+    layout_LXC4FZ:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 44
+        y: 12
+      dimensions:
+        width: 8
+        height: 8
+    layout_LJIC8Q:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 56
+        y: 8
+      dimensions:
+        width: 91
+        height: 16
+    style_G29O0A:
+      fontFamily: Alibaba PuHuiTi 2.0
+      fontStyle: 55 Regular
+      fontWeight: 400
+      fontSize: 12
+      lineHeight: 16px
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+      paragraphSpacing: 8
+    layout_DALQDS:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 44
+        y: 36
+      dimensions:
+        width: 409
+        height: 16
+    layout_XMIDV1:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 44
+        y: 28
+      dimensions:
+        width: 409
+        height: 0
+    layout_13K3OM:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 420
+        y: 464
+      dimensions:
+        width: 745
+        height: 76
+    layout_A6DTTF:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 32
+        y: 0
+      dimensions:
+        width: 713
+        height: 76
+    layout_J3OOSO:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 44
+        y: 36
+      dimensions:
+        width: 689
+        height: 32
+    layout_A0NYP5:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 1036
+        y: 72
+      dimensions:
+        width: 179
+        height: 48
+    layout_JPEWMW:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        y: 0
+      dimensions:
+        width: 179
+        height: 32
+    layout_6HLOSQ:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 12
+        y: 8
+      dimensions:
+        width: 155
+        height: 16
+    layout_D5K9EW:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 152
+        y: 37
+      dimensions:
+        width: 27
+        height: 10
+    style_9CDOC5:
+      fontFamily: Alibaba PuHuiTi 2.0
+      fontStyle: 65 Medium
+      fontWeight: 500
+      fontSize: 10
+      lineHeight: 10px
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+      paragraphSpacing: 8
+    fill_YLLEZ8:
+      - '#999999'
+    layout_XDLV0G:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 132
+        y: 36
+      dimensions:
+        width: 12
+        height: 12
+    layout_8LR8IS:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 3.25
+        y: 1.25
+      dimensions:
+        width: 7.5
+        height: 7.5
+    layout_Y6EJ6A:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 1.25
+        y: 3.25
+      dimensions:
+        width: 7.5
+        height: 7.5
+    layout_HRC7AL:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 420
+        y: 184
+      dimensions:
+        width: 478
+        height: 76
+    layout_J7EHLN:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 32
+        y: 0
+      dimensions:
+        width: 446
+        height: 60
+    layout_OY8J4I:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 83
+        y: 65
+      dimensions:
+        width: 27
+        height: 10
+    layout_T34HCR:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 44
+        y: 36
+      dimensions:
+        width: 422
+        height: 16
+    layout_20IST1:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 44
+        y: 28
+      dimensions:
+        width: 421
+        height: 0
+    layout_HWW0IX:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 43
+        y: 64
+      dimensions:
+        width: 12
+        height: 12
+    layout_J1LVCF:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 63
+        y: 64
+      dimensions:
+        width: 12
+        height: 12
+    layout_KBVJ6F:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 1
+        y: 1.5
+      dimensions:
+        width: 5
+        height: 9
+    layout_EE90G2:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 8
+        y: 3.75
+      dimensions:
+        width: 1
+        height: 4.5
+    layout_N9DJ0S:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 8.56
+        y: 1.74
+      dimensions:
+        width: 2.44
+        height: 8.55
+    layout_812G8Z:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 415
+        y: 556
+      dimensions:
+        width: 800
+        height: 144
+    layout_79GEVH:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        y: 16
+      dimensions:
+        width: 800
+        height: 128
+    fill_U2KKFK:
+      - '#F7F7F7'
+    layout_JPT5LG:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 6
+        y: 48
+      dimensions:
+        width: 788
+        height: 90
+    layout_VBIDLW:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 22
+        y: 60
+      dimensions:
+        width: 316
+        height: 22
+    style_L26EAL:
+      fontFamily: Alibaba PuHuiTi 2.0
+      fontStyle: 65 Medium
+      fontWeight: 500
+      fontSize: 16
+      letterSpacing: 4%
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    fill_J8XHKC:
+      - '#CFCFCF'
+    layout_A0WJTD:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 20
+        y: 24
+      dimensions:
+        width: 16
+        height: 16
+    layout_FMUARN:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 2.41
+        y: 3.07
+      dimensions:
+        width: 11.6
+        height: 10.19
+    layout_0MBF3L:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 70
+        y: 24
+      dimensions:
+        width: 99
+        height: 16
+    layout_KI0FPZ:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 169
+        y: 26
+      dimensions:
+        width: 12
+        height: 12
+    layout_S3JAIF:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 3
+        y: 4.5
+      dimensions:
+        width: 6
+        height: 3
+    layout_JRPE8L:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 52
+        y: 24
+      dimensions:
+        width: 16
+        height: 16
+    layout_MDUIFP:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 1.03
+        y: 2.48
+      dimensions:
+        width: 14.06
+        height: 10.56
+    fill_92KT3K:
+      - '#4D6BFE'
+    layout_ZBJ5CW:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 197
+        y: 26
+      dimensions:
+        width: 12
+        height: 12
+    layout_6OCVOZ:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 1
+        y: 1
+      dimensions:
+        width: 10
+        height: 10
+    layout_9YOZVP:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 213
+        y: 26
+      dimensions:
+        width: 24
+        height: 12
+    fill_E0UBZH:
+      - '#C4C4C4'
+    layout_YS0HTV:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 214
+        y: 27
+      dimensions:
+        width: 10
+        height: 10
+    effect_6WG42W:
+      boxShadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15)
+    layout_8BWLDK:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 724
+        y: 32
+      dimensions:
+        width: 48
+        height: 4
+    fill_N83ERU:
+      - '#D9D9D9'
+    layout_4MEH4A:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 572
+        y: 24
+      dimensions:
+        width: 144
+        height: 16
+    layout_5618XW:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 166
+        y: 0
+      dimensions:
+        width: 72
+        height: 22
+    layout_6Y5KOL:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        y: 0
+      dimensions:
+        width: 72
+        height: 20
+    fill_D5B28Z:
+      - '#393939'
+    layout_WFLGD9:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 34
+        y: 20
+      dimensions:
+        width: 4
+        height: 2
+    layout_6M45DR:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 172
+        y: 2
+      dimensions:
+        width: 60
+        height: 16
+    layout_R67TAT:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 714
+        y: 104
+      dimensions:
+        width: 72
+        height: 28
+    layout_554S9T:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 744
+        y: 110
+      dimensions:
+        width: 32
+        height: 16
+    layout_1K4K4E:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 724
+        y: 111
+      dimensions:
+        width: 16
+        height: 16
+    layout_1WBQY7:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 1.67
+        y: 1.67
+      dimensions:
+        width: 12.67
+        height: 12.67
+    layout_YLZYTJ:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 7.37
+        y: 1.67
+      dimensions:
+        width: 6.97
+        height: 6.97
+    layout_YM5MJT:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        y: 0
+      dimensions:
+        width: 190
+        height: 720
+    layout_9BDL4S:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 16
+        y: 20
+      dimensions:
+        width: 24
+        height: 24
+    layout_911P80:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0.54
+        y: -0.0
+      dimensions:
+        width: 22.91
+        height: 24
+    layout_ZNZM26:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 5.21
+        y: 6.01
+      dimensions:
+        width: 10.73
+        height: 9.2
+    layout_XTZ6SK:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 48
+        y: 22
+      dimensions:
+        width: 128
+        height: 22
+    style_HO9454:
+      fontFamily: Alibaba PuHuiTi 2.0
+      fontStyle: 85 Bold
+      fontWeight: 700
+      fontSize: 16
+      lineHeight: 21.19px
+      letterSpacing: 4%
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_3V493G:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 40
+        y: 76
+      dimensions:
+        width: 67
+        height: 16
+    style_HC94D7:
+      fontFamily: Alibaba PuHuiTi 2.0
+      fontStyle: 65 Medium
+      fontWeight: 500
+      fontSize: 12
+      lineHeight: 16px
+      letterSpacing: 4%
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_Y1JF7C:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 40
+        y: 120
+      dimensions:
+        width: 53
+        height: 16
+    layout_Y9KVOE:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 40
+        y: 333
+      dimensions:
+        width: 53
+        height: 16
+    layout_T05D5W:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 40
+        y: 377
+      dimensions:
+        width: 53
+        height: 16
+    layout_95YOFC:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 40
+        y: 465
+      dimensions:
+        width: 53
+        height: 16
+    layout_EZX6QL:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 40
+        y: 576
+      dimensions:
+        width: 53
+        height: 16
+    layout_YDUMAB:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 40
+        y: 620
+      dimensions:
+        width: 78
+        height: 16
+    layout_N35G87:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 40
+        y: 421
+      dimensions:
+        width: 53
+        height: 16
+    layout_PHLPI2:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 16
+        y: 288
+      dimensions:
+        width: 74
+        height: 17
+    style_XTNWWO:
+      fontFamily: Alibaba PuHuiTi 2.0
+      fontStyle: 55 Regular
+      fontWeight: 400
+      fontSize: 12
+      letterSpacing: 4%
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_FP9Y0G:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 16
+        y: 120
+      dimensions:
+        width: 16
+        height: 16
+    layout_USU886:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 1.94
+        y: 2.24
+      dimensions:
+        width: 2.42
+        height: 2.42
+    layout_AD2WS7:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 1.33
+        y: 1.33
+      dimensions:
+        width: 13.33
+        height: 13.33
+    layout_471PDD:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 8
+        y: 4
+      dimensions:
+        width: 2.83
+        height: 6.83
+    layout_SCH3OD:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 16
+        y: 76
+      dimensions:
+        width: 16
+        height: 16
+    layout_2UWTOK:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 8
+        y: 5.33
+      dimensions:
+        width: 0
+        height: 5.33
+    layout_QCS53J:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 5.33
+        y: 8
+      dimensions:
+        width: 5.33
+        height: 0
+    layout_5539H9:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 12
+        y: 154
+      dimensions:
+        width: 166
+        height: 24
+    fill_EH9DMJ:
+      - '#E2E2E2'
+    layout_OUAK2I:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 16
+        y: 152
+      dimensions:
+        width: 0
+        height: 16
+    style_IPLVT4:
+      fontFamily: Alibaba PuHuiTi 2.0
+      fontStyle: 55 Regular
+      fontWeight: 400
+      fontSize: 11.774325370788574
+      letterSpacing: 4%
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_XYZNWB:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 17
+        y: 156
+      dimensions:
+        width: 149
+        height: 17
+    layout_HFZ9AB:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 17
+        y: 189
+      dimensions:
+        width: 147
+        height: 17
+    layout_VRXZ62:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 17
+        y: 222
+      dimensions:
+        width: 102
+        height: 17
+    layout_YCN2XR:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 17
+        y: 255
+      dimensions:
+        width: 130
+        height: 17
+    layout_65UHX2:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        y: 664
+      dimensions:
+        width: 190
+        height: 0
+    layout_TZFLOC:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 12
+        y: 680
+      dimensions:
+        width: 24
+        height: 24
+    layout_8J95SM:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 94
+        y: 291
+      dimensions:
+        width: 12
+        height: 12
+    layout_97L1HI:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 45
+        y: 684
+      dimensions:
+        width: 25
+        height: 16
+    style_XTLTS3:
+      fontFamily: Alibaba PuHuiTi 2.0
+      fontStyle: 65 Medium
+      fontWeight: 500
+      fontSize: 12
+      lineHeight: 16px
+      letterSpacing: 4%
+      textAlignHorizontal: CENTER
+      textAlignVertical: TOP
+    layout_SOM28G:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 16
+        y: 333
+      dimensions:
+        width: 16
+        height: 16
+    layout_LX4WWR:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 3
+        y: 2.67
+      dimensions:
+        width: 10
+        height: 12
+    layout_VDP90G:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 6
+        y: 1.33
+      dimensions:
+        width: 0
+        height: 2
+    layout_ECZ4OV:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 10
+        y: 1.33
+      dimensions:
+        width: 0
+        height: 2
+    layout_SEEJ4D:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 5.33
+        y: 6.33
+      dimensions:
+        width: 5.33
+        height: 0
+    layout_PS3H5K:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 5.33
+        y: 9
+      dimensions:
+        width: 4
+        height: 0
+    layout_98GPQ3:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 5.33
+        y: 11.67
+      dimensions:
+        width: 2.67
+        height: 0
+    layout_OAUXMM:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 16
+        y: 377
+      dimensions:
+        width: 16
+        height: 16
+    layout_WHVVDR:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 2
+        y: 2
+      dimensions:
+        width: 4.67
+        height: 4.67
+    layout_OP47NN:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 2
+        y: 9.33
+      dimensions:
+        width: 4.67
+        height: 4.67
+    layout_3E0Z6W:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 9.33
+        y: 2
+      dimensions:
+        width: 4.67
+        height: 4.67
+    layout_WKTT95:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 9.33
+        y: 9.33
+      dimensions:
+        width: 4.67
+        height: 4.67
+    layout_YDAUYY:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 16
+        y: 421
+      dimensions:
+        width: 16
+        height: 16
+    layout_B6HUW7:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 1.33
+        y: 14
+      dimensions:
+        width: 13.33
+        height: 0
+    layout_2QW4D2:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 2.67
+        y: 9.33
+      dimensions:
+        width: 2
+        height: 4.67
+    layout_TRCNL5:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 7
+        y: 6
+      dimensions:
+        width: 2
+        height: 8
+    layout_08UDQK:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 11.33
+        y: 2
+      dimensions:
+        width: 2
+        height: 12
+    layout_N44RGY:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 16
+        y: 465
+      dimensions:
+        width: 16
+        height: 16
+    layout_FSBORY:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 6.37
+        y: 3.96
+      dimensions:
+        width: 5.64
+        height: 4.87
+    layout_S3LJAM:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 8.19
+        y: 8.5
+      dimensions:
+        width: 1.97
+        height: 2.37
+    layout_PZTRS3:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 16
+        y: 576
+      dimensions:
+        width: 16
+        height: 16
+    layout_RNZL1E:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 4.33
+        y: 3.33
+      dimensions:
+        width: 9.33
+        height: 11.33
+    layout_X0HU45:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 2.33
+        y: 1.33
+      dimensions:
+        width: 9.33
+        height: 11.33
+    layout_PLZUBC:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 7
+        y: 7.33
+      dimensions:
+        width: 4
+        height: 0
+    layout_I8CBON:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 7
+        y: 10
+      dimensions:
+        width: 4
+        height: 0
+    layout_Q3XZSV:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 16
+        y: 620
+      dimensions:
+        width: 16
+        height: 16
+    layout_YOOJT3:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 162
+        y: 684
+      dimensions:
+        width: 16
+        height: 16
+    layout_9XO208:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 1.33
+        y: 1.57
+      dimensions:
+        width: 13.33
+        height: 12.82
+    layout_8TL5PF:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 5.67
+        y: 5.67
+      dimensions:
+        width: 4.67
+        height: 4.67
+

@@ -1,0 +1,23 @@
+metadata:
+  name: code
+  components: {}
+  componentSets: {}
+nodes:
+  - id: 1:1874
+    name: Ellipse 40
+    type: ELLIPSE
+    layout: layout_PVHCAQ
+    fills: fill_QW0P00
+    effects: effect_Z4P3GP
+globalVars:
+  styles:
+    layout_PVHCAQ:
+      mode: none
+      sizing: {}
+      dimensions:
+        width: 17.78
+        height: 17.78
+    fill_QW0P00:
+      - '#FFFFFF'
+    effect_Z4P3GP:
+      boxShadow: 0px 0px 7.111111164093018px 0px rgba(0, 0, 0, 0.15)

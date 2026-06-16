@@ -1,0 +1,70 @@
+metadata:
+  name: code
+  components: {}
+  componentSets: {}
+nodes:
+  - id: 11:6
+    name: Group 75
+    type: GROUP
+    layout: layout_CPJHVL
+    children:
+      - id: 1:1137
+        name: Frame
+        type: IMAGE-SVG
+        layout: layout_WZ36TX
+        fills: fill_NM3ICI
+      - id: 1:1152
+        name: terminal
+        type: TEXT
+        layout: layout_CBU1HW
+        text: terminal
+        textStyle: style_ADALLT
+        fills: fill_BMJR09
+globalVars:
+  styles:
+    layout_CPJHVL:
+      mode: none
+      sizing: {}
+      dimensions:
+        width: 89.78
+        height: 29
+    layout_WZ36TX:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        y: 7.11
+      dimensions:
+        width: 14.22
+        height: 14.22
+    fill_NM3ICI: []
+    layout_NBZ986:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 5.63
+        y: 3.56
+      dimensions:
+        width: 3.56
+        height: 7.11
+    fill_BMJR09:
+      - '#686868'
+    layout_CBU1HW:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 17.78
+        y: 0
+      dimensions:
+        width: 72
+        height: 29
+    style_ADALLT:
+      fontFamily: Alibaba PuHuiTi 2.0
+      fontStyle: 55 Regular
+      fontWeight: 400
+      fontSize: 17.77777862548828
+      lineHeight: 28.44px
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+      paragraphSpacing: 14.222222328186035
+

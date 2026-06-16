@@ -1,0 +1,31 @@
+metadata:
+  name: code
+  components: {}
+  componentSets: {}
+nodes:
+  - id: 1:1876
+    name: "20.2k /\_1.0M\_· 剩余 979.8k"
+    type: TEXT
+    layout: layout_LJW3AT
+    text: "20.2k /\_1.0M\_· 剩余 979.8k"
+    textStyle: style_X4YD4J
+    fills: fill_BVB5GO
+globalVars:
+  styles:
+    layout_LJW3AT:
+      mode: none
+      sizing: {}
+      dimensions:
+        width: 256
+        height: 29
+    style_X4YD4J:
+      fontFamily: Alibaba PuHuiTi 2.0
+      fontStyle: 55 Regular
+      fontWeight: 400
+      fontSize: 21.33333396911621
+      lineHeight: 28.44px
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+      paragraphSpacing: 14.222222328186035
+    fill_BVB5GO:
+      - '#686868'

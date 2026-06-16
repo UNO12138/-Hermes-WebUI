@@ -1,0 +1,30 @@
+metadata:
+  name: code
+  components: {}
+  componentSets: {}
+nodes:
+  - id: 1:1871
+    name: Frame
+    type: IMAGE-SVG
+    layout: layout_H16M23
+    fills: fill_OV7L7G
+globalVars:
+  styles:
+    layout_H16M23:
+      mode: none
+      sizing: {}
+      dimensions:
+        width: 21.33
+        height: 21.33
+    fill_OV7L7G: []
+    layout_EJBL8I:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 1.78
+        y: 1.78
+      dimensions:
+        width: 17.78
+        height: 17.78
+    fill_2IMOTP:
+      - '#999999'

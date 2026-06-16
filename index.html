@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hermes WebUI - Figma Pixel</title>
+  <link rel="stylesheet" href="./styles.css?v=2" />
+</head>
+<body>
+  <div class="app" data-left="open" data-right="open">
+    <!-- =============== 左栏 =============== -->
+    <aside class="left-panel" aria-label="导航与对话历史">
+      <div class="left-bg"></div>
+
+      <div class="left-header">
+        <img class="icon-logo" src="icon/source/image.png" alt="" />
+        <span class="brand">Hermes WebUI</span>
+      </div>
+
+      <button class="nav-hit new-chat" data-left-toggle>
+        <img src="icon/Frame-6.svg" alt="" />
+        <span>新对话</span>
+      </button>
+
+      <div class="recent-section">
+        <img class="recent-icon" src="icon/Frame-11.svg" alt="" />
+        <span class="recent-title">最近对话</span>
+      </div>
+
+      <ul class="recent-list">
+        <li class="recent-item active" data-chat="figma">
+          <div class="recent-active-bg"></div>
+          <span>Figma网页设计画板尺寸建议</span>
+        </li>
+        <li class="recent-item" data-chat="insight">
+          <span>兴趣报告采集网页</span>
+        </li>
+        <li class="recent-item" data-chat="guide">
+          <span>WebUI 新手入门指引</span>
+        </li>
+        <li class="recent-item"><span>鸣潮3.4前瞻联动夜之城</span></li>
+      </ul>
+
+      <button class="all-chat">
+        查看所有对话
+        <img class="tiny-arrow" src="icon/Frame-20.svg" alt="" />
+      </button>
+
+      <nav class="left-nav" aria-label="主导航">
+        <a href="#" class="nav-hit"><img src="icon/Frame-5.svg" alt="" /><span>任务</span></a>
+        <a href="#" class="nav-hit"><img src="icon/Frame-4.svg" alt="" /><span>模型</span></a>
+        <a href="#" class="nav-hit"><img src="icon/Frame-3.svg" alt="" /><span>用量监控</span></a>
+        <a href="#" class="nav-hit"><img src="icon/Frame-2.svg" alt="" /><span>记忆</span></a>
+      </nav>
+
+      <nav class="bottom-nav" aria-label="底部导航">
+        <a href="#" class="nav-hit"><img src="icon/Frame-1.svg" alt="" /><span>日志</span></a>
+        <a href="#" class="nav-hit"><img src="icon/Frame.svg" alt="" /><span>Hermes文档</span></a>
+      </nav>
+
+      <div class="side-line"></div>
+
+      <div class="user-row">
+        <img class="user-avatar" src="icon/Ellipse 31.svg" alt="" />
+        <span class="user-name">糕冷</span>
+        <img class="user-settings" src="icon/Frame-19.svg" alt="" />
+      </div>
+    </aside>
+
+    <!-- =============== 中间工作区 =============== -->
+    <main class="workbench" aria-label="对话工作区">
+      <header class="top-bar">
+        <button class="top-icon left-toggle" data-left-toggle aria-label="收起左侧栏">
+          <img src="icon/Frame-18.svg" alt="" />
+        </button>
+        <div class="model-picker">
+          <span class="model-text">deepseek-v4-pro</span>
+          <img class="model-arrow" src="icon/Frame-20.svg" alt="" />
+        </div>
+        <div class="title-text" id="chat-title">Figma网页设计画板尺寸建议</div>
+        <button class="top-icon right-toggle" data-right-toggle aria-label="收起右侧栏">
+          <img src="icon/Frame-17.svg" alt="" />
+        </button>
+      </header>
+
+      <section class="chat-scroll" aria-label="对话消息">
+        <div class="chat-inner">
+        <!-- 对话1: Figma网页设计画板尺寸建议 -->
+        <div class="chat-page" data-page="figma">
+          <div class="tool-call" data-tool-call><span class="tool"><img src="icon/Frame-16.svg" alt="" />terminal</span></div>
+          <div class="tool-call" data-tool-call><span class="tool"><img src="icon/Frame-16.svg" alt="" />terminal</span></div>
+
+          <article class="chat-row user-row">
+            <div class="chat-bubble user-bubble">
+              <p>为啥WebUI还是显示版本落后</p>
+            </div>
+            <div class="message-footer">
+              <div class="message-actions"><img src="icon/Frame-12.svg" alt="" /></div>
+              <div class="message-meta user-meta"><time>21:25</time></div>
+            </div>
+          </article>
+
+          <div class="tool-call" data-tool-call><span class="tool"><img src="icon/Frame-16.svg" alt="" />terminal</span></div>
+
+          <article class="chat-row assistant-row">
+            <img class="message-avatar" src="icon/source/image.png" alt="" />
+            <div class="assistant-stack">
+              <div class="chat-bubble assistant-bubble">
+                <div class="thought-title">思考过程 · 404字</div>
+                <div class="thought-divider"></div>
+                <p>找到了！Hermes Web UI 用的是自己_内置的 Node.js，不是你系统的 Node.js。</p>
+              </div>
+              <div class="message-footer">
+                <div class="message-actions"><img src="icon/Frame-12.svg" alt="" /><img src="icon/Frame-9.svg" alt="" /></div>
+                <div class="message-meta"><time>21:25</time></div>
+              </div>
+            </div>
+          </article>
+
+          <div class="tool-call" data-tool-call><span class="tool"><img src="icon/Frame-16.svg" alt="" />skill_view</span></div>
+          <div class="tool-call" data-tool-call><span class="tool"><img src="icon/Frame-16.svg" alt="" />skill_view</span></div>
+
+          <article class="chat-row assistant-row">
+            <img class="message-avatar" src="icon/source/image.png" alt="" />
+            <div class="assistant-stack">
+              <div class="chat-bubble assistant-bubble wide">
+                <div class="thought-title">思考过程 · 291字</div>
+                <div class="thought-divider"></div>
+                <p>问题清楚了。Hermes Web UI 自带了一个独立的 Node.js v22.22.2（~/.hermes/node/），Web UI v0.6.5+ 要求 Node ≥ 23 才会报警告。需要替换这个内置的 Node.js。</p>
+              </div>
+              <div class="message-footer">
+                <div class="message-actions"><img src="icon/Frame-12.svg" alt="" /><img src="icon/Frame-9.svg" alt="" /></div>
+                <div class="message-meta"><time>21:25</time></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="chat-row assistant-row">
+            <img class="message-avatar" src="icon/source/image.png" alt="" />
+            <div class="assistant-stack">
+              <div class="chat-bubble assistant-bubble">
+                <div class="thought-title">思考过程 · 291字</div>
+                <div class="thought-divider"></div>
+                <p>问题找到了:Hermes Web UI 自带了 Node.js v22.22.2，不受系统 nvm影响。</p>
+              </div>
+              <div class="message-footer">
+                <div class="message-actions"><img src="icon/Frame-12.svg" alt="" /><img src="icon/Frame-9.svg" alt="" /></div>
+                <div class="message-meta"><time>21:25</time></div>
+              </div>
+            </div>
+          </article>
+
+          <div class="tool-call" data-tool-call><span class="tool"><img src="icon/Frame-16.svg" alt="" />skill_view</span></div>
+
+          <article class="chat-row assistant-row approval-row">
+            <img class="message-avatar" src="icon/source/image.png" alt="" />
+            <div class="approval-card">
+              <div class="approval-header">
+                <img class="approval-icon" src="icon/Frame-21.svg" alt="" />
+                <span class="approval-title">危险命令审批——从根路径删除</span>
+              </div>
+              <div class="approval-divider"></div>
+              <p class="approval-desc">删除/tmp/test_hermes_approval_demo目录及其所有内容</p>
+              <div class="approval-options">
+                <label class="approval-option"><input type="radio" name="approval" value="once" /><span class="approval-radio"></span><span>仅允许一次</span></label>
+                <label class="approval-option"><input type="radio" name="approval" value="session" /><span class="approval-radio"></span><span>仅本次会话允许</span></label>
+                <label class="approval-option"><input type="radio" name="approval" value="always" /><span class="approval-radio"></span><span>添加到永久允许列表</span></label>
+                <label class="approval-option"><input type="radio" name="approval" value="deny" /><span class="approval-radio"></span><span>拒绝</span></label>
+              </div>
+              <button class="approval-confirm">确定</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- 对话2: 兴趣报告采集网页 -->
+        <div class="chat-page hidden" data-page="insight">
+          <article class="chat-row user-row">
+            <div class="chat-bubble user-bubble">
+              <p>帮我制作一个小程序，让它能每天收集最新的与我的爱好相关的报告的网页</p>
+            </div>
+            <div class="message-footer">
+              <div class="message-actions"><img src="icon/Frame-12.svg" alt="" /></div>
+              <div class="message-meta user-meta"><time>21:25</time></div>
+            </div>
+          </article>
+
+          <article class="chat-row assistant-row">
+            <img class="message-avatar" src="icon/source/image.png" alt="" />
+            <div class="assistant-stack">
+              <div class="chat-bubble assistant-bubble">
+                <div class="thought-title">思考过程 · 404字</div>
+                <div class="thought-divider"></div>
+                <p>可以，而且我建议直接做成"每日自动抓取 + 生成一个本地网页"的小工具。<br/>你直接回我这一个格式就行：<br/>爱好：<br/>来源：<br/>更新时间：<br/>你一回复这些，我就直接开始给你做。</p>
+              </div>
+              <div class="message-footer">
+                <div class="message-actions"><img src="icon/Frame-12.svg" alt="" /><img src="icon/Frame-9.svg" alt="" /></div>
+                <div class="message-meta"><time>21:25</time></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="chat-row user-row">
+            <div class="chat-bubble user-bubble">
+              <p>爱好：KeyShot / Rhino / AI 视觉 / 视频创作<br/>来源：B站、YouTube、Behance、Product Hunt<br/>更新时间：每天早上 9:00</p>
+            </div>
+            <div class="message-footer">
+              <div class="message-actions"><img src="icon/Frame-12.svg" alt="" /></div>
+              <div class="message-meta user-meta"><time>21:26</time></div>
+            </div>
+          </article>
+
+          <article class="chat-row assistant-row">
+            <img class="message-avatar" src="icon/source/image.png" alt="" />
+            <div class="assistant-stack">
+              <div class="chat-bubble assistant-bubble">
+                <div class="thought-title">思考过程 · 291字</div>
+                <div class="thought-divider"></div>
+                <p>好的，我先给你搓一版深色高级感首页草图。</p>
+              </div>
+              <div class="message-footer">
+                <div class="message-actions"><img src="icon/Frame-12.svg" alt="" /><img src="icon/Frame-9.svg" alt="" /></div>
+                <div class="message-meta"><time>21:26</time></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="chat-row assistant-row file-row">
+            <img class="message-avatar" src="icon/source/image.png" alt="" />
+            <div class="file-card">
+              <div class="file-info">
+                <span class="file-name">daily-insight-mockup.html</span>
+                <span class="file-meta">文件1/共1</span>
+                <span class="file-path">d/GAFA/前端开发/daily-insight-board...</span>
+              </div>
+              <div class="file-icon">
+                <img src="icon/html-file-icon.png" alt="HTML 文件" />
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- 对话3: WebUI 新手入门指引 -->
+        <div class="chat-page hidden" data-page="guide">
+          <article class="chat-row assistant-row">
+            <img class="message-avatar" src="icon/source/image.png" alt="" />
+            <div class="assistant-stack">
+              <div class="chat-bubble assistant-bubble">
+                <p>欢迎来到 Hermes WebUI！我是你的 AI 助手，让我们一起来探索这个强大的工具吧。</p>
+              </div>
+              <div class="message-footer">
+                <div class="message-actions"><img src="icon/Frame-12.svg" alt="" /><img src="icon/Frame-9.svg" alt="" /></div>
+                <div class="message-meta"><time>09:00</time></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="chat-row assistant-row guide-row">
+            <img class="message-avatar" src="icon/source/image.png" alt="" />
+            <div class="guide-card">
+              <div class="guide-card-header">
+                <img class="guide-card-icon" src="icon/Frame-21.svg" alt="" />
+                <span class="guide-card-title">任务清单</span>
+              </div>
+              <p class="guide-card-desc">我为你准备了一份新手任务清单，让我们来完成任务，熟悉 Hermes 的核心功能吧！</p>
+              <div class="guide-steps">
+                <div class="guide-step active" data-step="1" onclick="jumpToStep(1)"><span class="step-num">1</span><span class="step-text">前往"模型"查看AI模型特点，接入一个你喜欢的模型</span></div>
+                <div class="guide-step" data-step="2" onclick="jumpToStep(2)"><span class="step-num">2</span><span class="step-text">点击左上角的模型名称，换一个模型试试</span></div>
+                <div class="guide-step" data-step="3" onclick="jumpToStep(3)"><span class="step-num">3</span><span class="step-text">打开右侧侧栏，查看本会话的运行日志</span></div>
+                <div class="guide-step" data-step="4" onclick="jumpToStep(4)"><span class="step-num">4</span><span class="step-text">前往"记忆"查看已存储的记忆，设定你的角色</span></div>
+                <div class="guide-step" data-step="5" onclick="jumpToStep(5)"><span class="step-num">5</span><span class="step-text">万事俱备，让我们开始一段新的对话吧</span></div>
+              </div>
+              <div class="guide-footer">
+                <span class="guide-progress" id="guide-progress">1/5</span>
+                <div class="guide-btns">
+                  <button class="guide-guide-btn">操作引导</button>
+                  <button class="guide-next-btn" id="guide-next-btn" onclick="guideNext()">下一步</button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      </section>
+
+      <section class="composer-box" aria-label="输入区">
+        <div class="composer-bg"></div>
+        <div class="composer-toolbar">
+          <div class="toolbar-left">
+            <button class="tool-btn"><img src="icon/Frame.svg" alt="" /></button>
+            <button class="model-select">
+              <img src="icon/Frame-10.svg" alt="" />
+              <span>deepseek-v4-pro</span>
+              <img src="icon/Frame-16.svg" alt="" />
+            </button>
+            <button class="tool-btn small"><img src="icon/Frame-13.svg" alt="" /></button>
+            <label class="switch-label" data-tool-toggle title="显示工具调用">
+              <span class="switch"><i></i></span>
+            </label>
+          </div>
+          <div class="usage-group">
+            <span>20.2k / 1.0M  ·  剩余 979.8k</span>
+            <b></b>
+          </div>
+        </div>
+        <div class="composer-inner">
+          <textarea placeholder="输入信息... (Enter发送，Shift+Enter换行)"></textarea>
+          <button class="send-btn">
+            <img src="icon/Frame-8.svg" alt="" />
+            <span>发送</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- =============== 右栏 =============== -->
+    <aside class="right-panel" aria-label="右侧面板">
+      <div class="resize-handle" data-resize-right aria-label="拖动调整右栏宽度"></div>
+
+      <!-- 日志/文件查看面板 (Figma对话) -->
+      <div class="right-page" data-right-page="figma">
+        <header class="right-header">
+          <div class="right-view-switch">
+            <button class="view-switch-btn" onclick="this.parentElement.classList.toggle('open')">
+              <span class="view-switch-label">日志</span>
+              <img src="icon/Frame-20.svg" alt="" />
+            </button>
+            <div class="view-switch-menu">
+              <button class="view-switch-item active" onclick="switchRightView('log', this)">日志</button>
+              <button class="view-switch-item" onclick="switchRightView('file', this)">文件查看</button>
+            </div>
+          </div>
+          <div class="log-filter-dropdown">
+            <button class="log-filter-btn" onclick="this.parentElement.classList.toggle('open')">
+              <span class="filter-label">类型</span>
+              <img src="icon/Frame-20.svg" alt="" />
+            </button>
+            <div class="log-filter-menu">
+              <button class="log-filter-item active" onclick="filterLogs('all', this)">全部</button>
+              <button class="log-filter-item" onclick="filterLogs('safe', this)">安全</button>
+              <button class="log-filter-item" onclick="filterLogs('danger', this)">危险报错</button>
+            </div>
+          </div>
+        </header>
+        <div class="log-list" data-right-view="log">
+          <div class="log-item"><time>21:25:18</time><span class="log-tag info">INFO</span><span class="log-text">WebUI version check completed</span></div>
+          <div class="log-item"><time>21:25:19</time><span class="log-tag info">INFO</span><span class="log-text">Node.js version: v22.22.2</span></div>
+          <div class="log-item"><time>21:25:20</time><span class="log-tag warn">WARNING</span><span class="log-text">Node version below recommended (≥23)</span></div>
+          <div class="log-item"><time>21:25:21</time><span class="log-tag info">INFO</span><span class="log-text">Starting skill_view: terminal</span></div>
+          <div class="log-item"><time>21:25:22</time><span class="log-tag info">INFO</span><span class="log-text">Command executed: node -v</span></div>
+          <div class="log-item"><time>21:25:23</time><span class="log-tag error">ERROR</span><span class="log-text">Permission denied on /tmp/test</span></div>
+          <div class="log-item"><time>21:25:24</time><span class="log-tag info">INFO</span><span class="log-text">Approval requested: dangerous command</span></div>
+          <div class="log-item"><time>21:25:25</time><span class="log-tag info">INFO</span><span class="log-text">User approved command (once)</span></div>
+          <div class="log-item"><time>21:25:26</time><span class="log-tag info">INFO</span><span class="log-text">Directory removed successfully</span></div>
+          <div class="log-item"><time>21:25:27</time><span class="log-tag info">INFO</span><span class="log-text">Session saved</span></div>
+          <div class="log-item"><time>21:25:30</time><span class="log-tag info">INFO</span><span class="log-text">Model provider initialized: deepseek</span></div>
+          <div class="log-item"><time>21:25:31</time><span class="log-tag info">INFO</span><span class="log-text">API endpoint verified: https://api.deepseek.com/v1</span></div>
+          <div class="log-item"><time>21:25:32</time><span class="log-tag warn">WARNING</span><span class="log-text">Rate limit approaching: 85% of quota used</span></div>
+          <div class="log-item"><time>21:25:33</time><span class="log-tag info">INFO</span><span class="log-text">Loading skill: terminal</span></div>
+          <div class="log-item"><time>21:25:34</time><span class="log-tag info">INFO</span><span class="log-text">Skill loaded: 12 tools registered</span></div>
+          <div class="log-item"><time>21:25:35</time><span class="log-tag info">INFO</span><span class="log-text">Web search capability: enabled</span></div>
+          <div class="log-item"><time>21:25:36</time><span class="log-tag error">ERROR</span><span class="log-text">Connection timeout to auxiliary service</span></div>
+          <div class="log-item"><time>21:25:37</time><span class="log-tag info">INFO</span><span class="log-text">Retrying connection... attempt 1/3</span></div>
+          <div class="log-item"><time>21:25:38</time><span class="log-tag info">INFO</span><span class="log-text">Retrying connection... attempt 2/3</span></div>
+          <div class="log-item"><time>21:25:39</time><span class="log-tag info">INFO</span><span class="log-text">Connection restored successfully</span></div>
+          <div class="log-item"><time>21:25:40</time><span class="log-tag warn">WARNING</span><span class="log-text">Memory usage exceeding 80% threshold</span></div>
+          <div class="log-item"><time>21:25:41</time><span class="log-tag info">INFO</span><span class="log-text">Context window: 128K tokens available</span></div>
+          <div class="log-item"><time>21:25:42</time><span class="log-tag info">INFO</span><span class="log-text">Streaming response mode: enabled</span></div>
+          <div class="log-item"><time>21:25:43</time><span class="log-tag error">ERROR</span><span class="log-text">Token validation failed for provider custom:friend-proxy</span></div>
+          <div class="log-item"><time>21:25:44</time><span class="log-tag info">INFO</span><span class="log-text">Falling back to default provider</span></div>
+          <div class="log-item"><time>21:25:45</time><span class="log-tag info">INFO</span><span class="log-text">Agent loop started: 25 max turns</span></div>
+          <div class="log-item"><time>21:25:46</time><span class="log-tag info">INFO</span><span class="log-text">Tool call: terminal - node -v</span></div>
+          <div class="log-item"><time>21:25:47</time><span class="log-tag info">INFO</span><span class="log-text">Tool output received: v22.22.2</span></div>
+          <div class="log-item"><time>21:25:48</time><span class="log-tag warn">WARNING</span><span class="log-text">Deprecated API version detected</span></div>
+          <div class="log-item"><time>21:25:49</time><span class="log-tag info">INFO</span><span class="log-text">Skill cache warmed: 8 skills loaded</span></div>
+          <div class="log-item"><time>21:25:50</time><span class="log-tag error">ERROR</span><span class="log-text">Plugin load failed: incompatible version</span></div>
+          <div class="log-item"><time>21:25:51</time><span class="log-tag info">INFO</span><span class="log-text">Retrying plugin load... success</span></div>
+          <div class="log-item"><time>21:25:52</time><span class="log-tag info">INFO</span><span class="log-text">Memory snapshot saved: 1.2GB used</span></div>
+          <div class="log-item"><time>21:25:53</time><span class="log-tag warn">WARNING</span><span class="log-text">Disk space below 10%: 8.3GB remaining</span></div>
+          <div class="log-item"><time>21:25:54</time><span class="log-tag info">INFO</span><span class="log-text">Auto-cleanup scheduled for idle files</span></div>
+          <div class="log-item"><time>21:25:55</time><span class="log-tag info">INFO</span><span class="log-text">Web search index updated: 142 new entries</span></div>
+          <div class="log-item"><time>21:25:56</time><span class="log-tag info">INFO</span><span class="log-text">Conversation history compressed</span></div>
+          <div class="log-item"><time>21:25:57</time><span class="log-tag error">ERROR</span><span class="log-text">SSL certificate verification failed</span></div>
+          <div class="log-item"><time>21:25:58</time><span class="log-tag info">INFO</span><span class="log-text">Certificate chain updated from cache</span></div>
+          <div class="log-item"><time>21:25:59</time><span class="log-tag info">INFO</span><span class="log-text">Health check: all systems operational</span></div>
+          <div class="log-item"><time>21:26:00</time><span class="log-tag info">INFO</span><span class="log-text">Prompt tokens: 4.2K | Completion: 1.8K</span></div>
+          <div class="log-item"><time>21:26:01</time><span class="log-tag info">INFO</span><span class="log-text">Response latency: 234ms</span></div>
+          <div class="log-item"><time>21:26:02</time><span class="log-tag warn">WARNING</span><span class="log-text">Temperature setting high: 1.2 (recommend ≤1.0)</span></div>
+          <div class="log-item"><time>21:26:03</time><span class="log-tag info">INFO</span><span class="log-text">Embedding model loaded: text-embedding-3</span></div>
+          <div class="log-item"><time>21:26:04</time><span class="log-tag info">INFO</span><span class="log-text">Vector store initialized: 15K documents</span></div>
+          <div class="log-item"><time>21:26:05</time><span class="log-tag error">ERROR</span><span class="log-text">Chunk overflow: document exceeds 8K limit</span></div>
+          <div class="log-item"><time>21:26:06</time><span class="log-tag info">INFO</span><span class="log-text">Document split into 3 chunks</span></div>
+          <div class="log-item"><time>21:26:07</time><span class="log-tag info">INFO</span><span class="log-text">Tool call: skill_view - hermes-agent</span></div>
+          <div class="log-item"><time>21:26:08</time><span class="log-tag info">INFO</span><span class="log-text">Skill documentation rendered</span></div>
+          <div class="log-item"><time>21:26:09</time><span class="log-tag warn">WARNING</span><span class="log-text">Concurrent request limit: 3/5 active</span></div>
+          <div class="log-item"><time>21:26:10</time><span class="log-tag info">INFO</span><span class="log-text">Background task completed: log rotation</span></div>
+          <div class="log-item"><time>21:26:11</time><span class="log-tag info">INFO</span><span class="log-text">Session heartbeat: connection stable</span></div>
+          <div class="log-item"><time>21:26:12</time><span class="log-tag error">ERROR</span><span class="log-text">JSON parse error in tool response</span></div>
+          <div class="log-item"><time>21:26:13</time><span class="log-tag info">INFO</span><span class="log-text">Auto-corrected response format</span></div>
+          <div class="log-item"><time>21:26:14</time><span class="log-tag info">INFO</span><span class="log-text">Function calling: 3 tools available</span></div>
+          <div class="log-item"><time>21:26:15</time><span class="log-tag info">INFO</span><span class="log-text">Streaming token rate: 42 tokens/sec</span></div>
+          <div class="log-item"><time>21:26:16</time><span class="log-tag warn">WARNING</span><span class="log-text">Context utilization: 92% (118K/128K)</span></div>
+          <div class="log-item"><time>21:26:17</time><span class="log-tag info">INFO</span><span class="log-text">Auto-summarization triggered</span></div>
+        </div>
+        <div class="log-list hidden" data-right-view="file" style="background:#1a1a2e;flex:1 1 auto;min-height:0;overflow-y:auto;padding:16px;color:#fff;">
+          <div class="preview-header">
+            <div class="preview-icon"></div>
+            <div class="preview-title" style="color:#fff"><h3 style="color:#fff">Daily Insight Board</h3><p style="color:#a0a0b0">为你的兴趣自动收集最新网页报告</p></div>
+          </div>
+          <div class="preview-actions">
+            <span class="preview-date" style="color:#a0a0b0">06 Jun 2026 · 09:00 更新</span>
+            <button class="preview-btn secondary" style="background:rgba(255,255,255,.1);color:#fff">切换兴趣源</button>
+            <button class="preview-btn primary" style="background:#4d6bfe;color:#fff">生成今日简报</button>
+          </div>
+          <div class="preview-card" style="background:rgba(255,255,255,.05)">
+            <span class="preview-tag" style="background:rgba(255,255,255,.08);color:#a0a0b0">精选追踪 · KeyShot / Rhino / AI 视觉 / 视频创作</span>
+            <h2 class="preview-headline" style="color:#fff">把每天分散在各处的最新报告，整理成一张真正能看的情报面板。</h2>
+            <p class="preview-desc" style="color:#a0a0b0">这是一版偏高级感的深色首页草图。它适合后面接入自动采集脚本，把你关心的设计、渲染、AI 工具、视频制作资讯，按天汇总成统一网页。</p>
+            <div class="preview-stats">
+              <div class="stat"><span class="stat-num" style="color:#fff">42</span><span class="stat-label" style="color:#a0a0b0">今日已抓取条目</span></div>
+              <div class="stat"><span class="stat-num" style="color:#fff">09</span><span class="stat-label" style="color:#a0a0b0">高相关信号</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="file-path-bar" data-right-view="file">
+          <span class="file-path-text" title="d/GAFA/前端开发/daily-insight-board-mockup.html">d/GAFA/前端开发/daily-insight-board-mockup.html</span>
+          <button class="file-path-btn" onclick="navigator.clipboard.writeText('d/GAFA/前端开发/daily-insight-board-mockup.html')" title="复制路径"><img src="icon/copy.svg" alt="" /></button>
+          <button class="file-path-btn" title="打开文件夹"><img src="icon/folder-open.svg" alt="" /></button>
+        </div>
+      </div>
+
+      <!-- 文件查看面板 (兴趣报告对话) -->
+      <div class="right-page hidden" data-right-page="insight">
+        <header class="right-header">
+          <div class="right-view-switch">
+            <button class="view-switch-btn" onclick="this.parentElement.classList.toggle('open')">
+              <span class="view-switch-label">文件查看</span>
+              <img src="icon/Frame-20.svg" alt="" />
+            </button>
+            <div class="view-switch-menu">
+              <button class="view-switch-item" onclick="switchRightView('log', this)">日志</button>
+              <button class="view-switch-item active" onclick="switchRightView('file', this)">文件查看</button>
+            </div>
+          </div>
+          <button class="fav-star-btn" onclick="this.closest('.right-page').classList.toggle('fav-open')" title="收藏夹">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1.5l2.09 4.26 4.68.68-3.38 3.3.8 4.66L9 12.67l-4.19 2.23.8-4.66-3.38-3.3 4.68-.68L9 1.5z" stroke="#999" stroke-width="1.2" stroke-linejoin="round"/></svg>
+          </button>
+        </header>
+
+        <div class="fav-dropdown">
+          <div class="fav-dropdown-title">收藏夹</div>
+          <div class="fav-dd-list">
+            <div class="fav-item"><img class="fav-icon" src="icon/fav-code.svg" alt="" /><span class="fav-name">daily-insight-mockup.html</span><button class="fav-remove" onclick="this.closest('.fav-item').remove()" title="取消收藏">×</button></div>
+            <div class="fav-item"><img class="fav-icon" src="icon/fav-text.svg" alt="" /><span class="fav-name">interest keywords.md</span><button class="fav-remove" onclick="this.closest('.fav-item').remove()" title="取消收藏">×</button></div>
+            <div class="fav-item"><img class="fav-icon" src="icon/fav-text.svg" alt="" /><span class="fav-name">hobby keywords.md</span><button class="fav-remove" onclick="this.closest('.fav-item').remove()" title="取消收藏">×</button></div>
+          </div>
+        </div>
+
+        <div class="file-preview" data-right-view="file">
+          <div class="preview-header">
+            <div class="preview-icon"></div>
+            <div class="preview-title"><h3>Daily Insight Board</h3><p>为你的兴趣自动收集最新网页报告</p></div>
+          </div>
+          <div class="preview-actions">
+            <span class="preview-date">06 Jun 2026 · 09:00 更新</span>
+            <button class="preview-btn secondary">切换兴趣源</button>
+            <button class="preview-btn primary">生成今日简报</button>
+          </div>
+          <div class="preview-card">
+            <span class="preview-tag">精选追踪 · KeyShot / Rhino / AI 视觉 / 视频创作</span>
+            <h2 class="preview-headline">把每天分散在各处的最新报告，整理成一张真正能看的情报面板。</h2>
+            <p class="preview-desc">这是一版偏高级感的深色首页草图。它适合后面接入自动采集脚本，把你关心的设计、渲染、AI 工具、视频制作资讯，按天汇总成统一网页。</p>
+            <div class="preview-stats">
+              <div class="stat"><span class="stat-num">42</span><span class="stat-label">今日已抓取条目</span></div>
+              <div class="stat"><span class="stat-num">09</span><span class="stat-label">高相关信号</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="file-path-bar" data-right-view="file">
+          <span class="file-path-text" title="d/GAFA/前端开发/daily-insight-board-mockup.html">d/GAFA/前端开发/daily-insight-board-mockup.html</span>
+          <button class="file-path-btn" onclick="navigator.clipboard.writeText('d/GAFA/前端开发/daily-insight-board-mockup.html')" title="复制路径"><img src="icon/copy.svg" alt="" /></button>
+          <button class="file-path-btn" title="打开文件夹"><img src="icon/folder-open.svg" alt="" /></button>
+        </div>
+      </div>
+
+      <!-- 日志面板 (新手引导对话) -->
+      <div class="right-page hidden" data-right-page="guide">
+        <header class="right-header">
+          <div class="right-view-switch">
+            <button class="view-switch-btn" onclick="this.parentElement.classList.toggle('open')">
+              <span class="view-switch-label">日志</span>
+              <img src="icon/Frame-20.svg" alt="" />
+            </button>
+            <div class="view-switch-menu">
+              <button class="view-switch-item active" onclick="switchRightView('log', this)">日志</button>
+              <button class="view-switch-item" onclick="switchRightView('file', this)">文件查看</button>
+            </div>
+          </div>
+          <div class="log-filter-dropdown">
+            <button class="log-filter-btn" onclick="this.parentElement.classList.toggle('open')">
+              <span class="filter-label">类型</span>
+              <img src="icon/Frame-20.svg" alt="" />
+            </button>
+            <div class="log-filter-menu">
+              <button class="log-filter-item active" onclick="filterLogs('all', this)">全部</button>
+              <button class="log-filter-item" onclick="filterLogs('safe', this)">安全</button>
+              <button class="log-filter-item" onclick="filterLogs('danger', this)">危险报错</button>
+            </div>
+          </div>
+        </header>
+        <div class="log-list" data-right-view="log">
+          <div class="log-item"><time>09:00:01</time><span class="log-tag info">INFO</span><span class="log-text">新手引导会话已启动</span></div>
+          <div class="log-item"><time>09:00:02</time><span class="log-tag info">INFO</span><span class="log-text">加载任务清单: WebUI 新手入门指引</span></div>
+          <div class="log-item"><time>09:00:03</time><span class="log-tag info">INFO</span><span class="log-text">模型: deepseek-v4-pro 已就绪</span></div>
+          <div class="log-item"><time>09:00:05</time><span class="log-tag info">INFO</span><span class="log-text">等待用户完成第一步任务...</span></div>
+        </div>
+        <div class="log-list hidden" data-right-view="file" style="background:#1a1a2e;flex:1 1 auto;min-height:0;overflow-y:auto;padding:16px;color:#fff;">
+          <div class="preview-header">
+            <div class="preview-icon"></div>
+            <div class="preview-title" style="color:#fff"><h3 style="color:#fff">使用指引</h3><p style="color:#a0a0b0">逐步掌握 Hermes WebUI 核心功能</p></div>
+          </div>
+          <div class="preview-actions">
+            <span class="preview-date" style="color:#a0a0b0">17 Jun 2026 · 09:00 更新</span>
+            <button class="preview-btn primary" style="background:#4d6bfe;color:#fff">开始体验</button>
+          </div>
+          <div class="preview-card" style="background:rgba(255,255,255,.05)">
+            <span class="preview-tag" style="background:rgba(255,255,255,.08);color:#a0a0b0">新手引导 · 5 步入门</span>
+            <h2 class="preview-headline" style="color:#fff">跟着任务清单，一步步解锁 Hermes 的核心能力。</h2>
+            <p class="preview-desc" style="color:#a0a0b0">从模型选择到日志查看，从记忆管理到工具调用，每个环节都有清晰的指引。</p>
+            <div class="preview-stats">
+              <div class="stat"><span class="stat-num" style="color:#fff">5</span><span class="stat-label" style="color:#a0a0b0">任务步骤</span></div>
+              <div class="stat"><span class="stat-num" style="color:#fff">~5min</span><span class="stat-label" style="color:#a0a0b0">预计用时</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="file-path-bar" data-right-view="file">
+          <span class="file-path-text" title="d/GAFA/前端开发/daily-insight-board-mockup.html">d/GAFA/前端开发/daily-insight-board-mockup.html</span>
+          <button class="file-path-btn" onclick="navigator.clipboard.writeText('d/GAFA/前端开发/daily-insight-board-mockup.html')" title="复制路径"><img src="icon/copy.svg" alt="" /></button>
+          <button class="file-path-btn" title="打开文件夹"><img src="icon/folder-open.svg" alt="" /></button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

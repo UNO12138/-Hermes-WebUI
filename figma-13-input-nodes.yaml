@@ -1,0 +1,22 @@
+metadata:
+  name: code
+  components: {}
+  componentSets: {}
+nodes:
+  - id: 1:1108
+    name: Rectangle 517
+    type: RECTANGLE
+    layout: layout_G0A7ZJ
+    fills: fill_Z0K4O0
+    borderRadius: 21.33333396911621px
+globalVars:
+  styles:
+    layout_G0A7ZJ:
+      mode: none
+      sizing: {}
+      dimensions:
+        width: 1400.89
+        height: 160
+    fill_Z0K4O0:
+      - '#FFFFFF'
+
