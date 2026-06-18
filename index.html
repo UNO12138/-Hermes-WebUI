@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hermes WebUI - Figma Pixel</title>
-  <link rel="stylesheet" href="./styles.css?v=2" />
+  <link rel="stylesheet" href="./styles.css?v=3" />
 </head>
 <body>
   <div class="app" data-left="open" data-right="open">
@@ -17,7 +17,7 @@
         <span class="brand">Hermes WebUI</span>
       </div>
 
-      <button class="nav-hit new-chat" data-left-toggle>
+      <button class="nav-hit new-chat" onclick="switchToNewChat()">
         <img src="icon/Frame-6.svg" alt="" />
         <span>新对话</span>
       </button>
@@ -38,7 +38,6 @@
         <li class="recent-item" data-chat="guide">
           <span>WebUI 新手入门指引</span>
         </li>
-        <li class="recent-item"><span>鸣潮3.4前瞻联动夜之城</span></li>
       </ul>
 
       <button class="all-chat">
@@ -48,7 +47,7 @@
 
       <nav class="left-nav" aria-label="主导航">
         <a href="#" class="nav-hit"><img src="icon/Frame-5.svg" alt="" /><span>任务</span></a>
-        <a href="#" class="nav-hit"><img src="icon/Frame-4.svg" alt="" /><span>模型</span></a>
+        <a href="#" class="nav-hit" data-chat="models"><img src="icon/Frame-4.svg" alt="" /><span>模型</span></a>
         <a href="#" class="nav-hit"><img src="icon/Frame-3.svg" alt="" /><span>用量监控</span></a>
         <a href="#" class="nav-hit"><img src="icon/Frame-2.svg" alt="" /><span>记忆</span></a>
       </nav>
@@ -56,6 +55,7 @@
       <nav class="bottom-nav" aria-label="底部导航">
         <a href="#" class="nav-hit"><img src="icon/Frame-1.svg" alt="" /><span>日志</span></a>
         <a href="#" class="nav-hit"><img src="icon/Frame.svg" alt="" /><span>Hermes文档</span></a>
+        <a href="#" class="nav-hit" data-chat="guide"><img src="icon/guide-book.svg" alt="" /><span>新手引导</span></a>
       </nav>
 
       <div class="side-line"></div>
@@ -81,6 +81,9 @@
         <button class="top-icon right-toggle" data-right-toggle aria-label="收起右侧栏">
           <img src="icon/Frame-17.svg" alt="" />
         </button>
+        <div class="models-top-btn" style="display:none;margin-left:auto;padding-right:16px;">
+          <button class="models-add-btn" onclick="openAddModel()" style="position:static;">+ 添加模型</button>
+        </div>
       </header>
 
       <section class="chat-scroll" aria-label="对话消息">
@@ -226,14 +229,27 @@
 
           <article class="chat-row assistant-row file-row">
             <img class="message-avatar" src="icon/source/image.png" alt="" />
-            <div class="file-card">
-              <div class="file-info">
-                <span class="file-name">daily-insight-mockup.html</span>
-                <span class="file-meta">文件1/共1</span>
+            <div class="file-card-wrapper">
+              <div class="file-card">
+                <div class="file-card-top">
+                  <div class="file-info">
+                    <span class="file-name">daily-insight-mockup.html</span>
+                    <span class="file-meta">文件1/共1</span>
+                  </div>
+                  <div class="file-icon">
+                    <img src="icon/html-file-icon.png" alt="HTML 文件" />
+                  </div>
+                </div>
+                <div class="file-card-divider"></div>
                 <span class="file-path">d/GAFA/前端开发/daily-insight-board...</span>
               </div>
-              <div class="file-icon">
-                <img src="icon/html-file-icon.png" alt="HTML 文件" />
+              <div class="file-card-actions">
+                <button class="fca-btn" title="复制"><img src="icon/source/Frame.svg" alt="" /></button>
+                <button class="fca-btn" title="打开文件夹"><img src="icon/source/Frame-1.svg" alt="" /></button>
+                <button class="fca-btn fav-toggle-btn" title="取消收藏" onclick="toggleFileFav(this)">
+                  <img src="icon/source/Frame-3.svg" alt="" />
+                </button>
+                <time>21:25</time>
               </div>
             </div>
           </article>
@@ -272,12 +288,310 @@
               <div class="guide-footer">
                 <span class="guide-progress" id="guide-progress">1/5</span>
                 <div class="guide-btns">
-                  <button class="guide-guide-btn">操作引导</button>
+                  <button class="guide-guide-btn" id="guide-guide-btn" onclick="guideReset()">操作引导</button>
                   <button class="guide-next-btn" id="guide-next-btn" onclick="guideNext()">下一步</button>
                 </div>
               </div>
             </div>
           </article>
+        </div>
+
+        <!-- 对话4: 新对话 -->
+        <div class="chat-page hidden" data-page="newchat">
+          <div class="newchat-greeting">
+            <h1>早上好，糕冷</h1>
+          </div>
+          <div class="task-frameworks">
+            <!-- 任务框架 -->
+            <div class="fw-row">
+              <span class="fw-label">任务框架</span>
+              <div class="fw-pills">
+                <span class="fw-pill active">文献研究</span>
+                <span class="fw-pill">数据处理</span>
+                <span class="fw-pill">网页自动化</span>
+                <span class="fw-pill">脚本开发</span>
+                <span class="fw-pill">创意设计</span>
+              </div>
+            </div>
+            <!-- 身份细分 -->
+            <div class="fw-row">
+              <span class="fw-label">身份细分</span>
+              <div class="fw-pills">
+                <span class="fw-pill">高校教师</span>
+                <span class="fw-pill active">学术研究</span>
+                <span class="fw-pill">法务专员</span>
+                <span class="fw-pill">市场部门</span>
+                <span class="fw-pill">产品经理</span>
+                <span class="fw-pill">设计师</span>
+                <span class="fw-pill">数据分析师</span>
+                <span class="fw-pill">运维工程师</span>
+                <span class="fw-pill">项目经理</span>
+                <span class="fw-pill">内容创作者</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 对话5: 模型 -->
+        <div class="chat-page hidden" data-page="models">
+          <div class="models-header">
+            <h1>模型</h1>
+            <button class="models-add-btn" onclick="openAddModel()">+ 添加模型</button>
+          </div>
+
+          <!-- 卡片区 -->
+          <div class="models-cards">
+            <div class="mp-card default">
+              <div class="mp-card-head"><span class="mp-provider-name">DeepSeek</span><span class="mp-badge">当前默认</span></div>
+              <div class="mp-row"><span class="mp-label">Provider</span><span class="mp-val">deepseek</span></div>
+              <div class="mp-row"><span class="mp-label">Base URL</span><span class="mp-val">https://api.deepseek.com</span></div>
+              <div class="mp-row"><span class="mp-label">模型列表</span><span class="mp-val">3 个模型</span></div>
+              <div class="mp-tags">
+                <span class="mp-tag active">deepseek-v4-pro 默认</span>
+                <span class="mp-tag">deepseek-v4-flash</span>
+                <span class="mp-tag">deepseek-chat</span>
+              </div>
+              <div class="mp-actions"><a href="#" onclick="openManageModal();return false;">管理</a><a href="#">删除</a></div>
+            </div>
+            <div class="mp-card">
+              <div class="mp-card-head"><span class="mp-provider-name">Google AI Studio</span></div>
+              <div class="mp-row"><span class="mp-label">Provider</span><span class="mp-val">gemini</span></div>
+              <div class="mp-row"><span class="mp-label">Base URL</span><span class="mp-val">https://generativelanguage.googleapis.com</span></div>
+              <div class="mp-row"><span class="mp-label">模型列表</span><span class="mp-val">4 个模型</span></div>
+              <div class="mp-tags">
+                <span class="mp-tag">gemini-3.1-pro</span>
+                <span class="mp-tag">gemini-3-pro</span>
+                <span class="mp-tag">gemini-3-flash</span>
+                <span class="mp-tag">gemini-3.1-flash-lite</span>
+              </div>
+              <div class="mp-actions"><a href="#" onclick="openManageModal();return false;">管理</a><a href="#">删除</a></div>
+            </div>
+            <div class="mp-card">
+              <div class="mp-card-head"><span class="mp-provider-name">OpenAI</span></div>
+              <div class="mp-row"><span class="mp-label">Provider</span><span class="mp-val">openai</span></div>
+              <div class="mp-row"><span class="mp-label">Base URL</span><span class="mp-val">https://api.openai.com</span></div>
+              <div class="mp-row"><span class="mp-label">模型列表</span><span class="mp-val">4 个模型</span></div>
+              <div class="mp-tags">
+                <span class="mp-tag">gpt-5.5/pro</span>
+                <span class="mp-tag">gpt-5.4</span>
+                <span class="mp-tag">gpt-5.3-codex</span>
+                <span class="mp-tag">gpt-image-2</span>
+              </div>
+              <div class="mp-actions"><a href="#" onclick="openManageModal();return false;">管理</a><a href="#">删除</a></div>
+            </div>
+          </div>
+
+          <!-- 搜索筛选栏 -->
+          <div class="models-search-bar">
+            <div class="ms-search-box">
+              <img src="icon/search-icon.svg" alt="" class="ms-search-icon" />
+              <input type="text" placeholder="搜索模型名称，提供商，能力..." />
+            </div>
+            <div class="ms-filter-box" onclick="this.querySelector('.ms-drop').classList.toggle('open')">
+              来源 <img src="icon/chevron-down.svg" alt="" class="ms-chevron" />
+              <div class="ms-drop"><span onclick="event.stopPropagation();filterProvider('all',this)">全部</span><span onclick="event.stopPropagation();filterProvider('OpenAI',this)">OpenAI</span><span onclick="event.stopPropagation();filterProvider('Anthropic',this)">Anthropic</span><span onclick="event.stopPropagation();filterProvider('DeepSeek',this)">DeepSeek</span><span onclick="event.stopPropagation();filterProvider('Google',this)">Google</span><span onclick="event.stopPropagation();filterProvider('Moonshot',this)">Moonshot</span><span onclick="event.stopPropagation();filterProvider('Alibaba',this)">Alibaba</span><span onclick="event.stopPropagation();filterProvider('Tencent',this)">Tencent</span></div>
+            </div>
+            <div class="ms-filter-box" onclick="this.querySelector('.ms-drop').classList.toggle('open')">
+              能力 <img src="icon/chevron-down.svg" alt="" class="ms-chevron" />
+              <div class="ms-drop"><span onclick="event.stopPropagation();filterModels('all',this)">全部</span><span onclick="event.stopPropagation();filterModels('推理',this)">推理</span><span onclick="event.stopPropagation();filterModels('多模态',this)">多模态</span><span onclick="event.stopPropagation();filterModels('性价比',this)">性价比</span></div>
+            </div>
+          </div>
+
+          <!-- 模型表格 -->
+          <div class="models-table">
+          <div class="mt-inner">
+            <div class="mt-header">
+              <span>模型热度</span><span>供应商</span><span>能力</span><span>路径/入口</span><span>价格</span>
+            </div>
+            <div class="mt-row">
+              <span class="mt-hot">gpt-5.3-codex</span>
+              <span class="mt-prov"><img src="icon/openai.svg" alt="" class="mt-logo" /> OpenAI</span>
+              <span class="mt-cap">
+                <span class="mt-stars"><span class="mt-label">推理</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">多模态</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span></span>
+                <span class="mt-stars"><span class="mt-label">性价比</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+              </span>
+              <span class="mt-link"><a href="#">https://platform.openai.com</a></span>
+              <span class="mt-price">输入 $5.00/1M<br/>输出 $30.00/1M</span>
+            </div>
+            <div class="mt-row">
+              <span class="mt-hot">claude-opus-4.8</span>
+              <span class="mt-prov"><img src="icon/Anthropic.svg" alt="" class="mt-logo" /> Anthropic</span>
+              <span class="mt-cap">
+                <span class="mt-stars"><span class="mt-label">推理</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span></span>
+                <span class="mt-stars"><span class="mt-label">多模态</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span></span>
+                <span class="mt-stars"><span class="mt-label">性价比</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+              </span>
+              <span class="mt-link"><a href="#">https://console.anthropic.com</a></span>
+              <span class="mt-price">输入 $5.00/1M<br/>输出 $25.00/1M</span>
+            </div>
+            <div class="mt-row">
+              <span class="mt-hot">deepseek-v4-pro</span>
+              <span class="mt-prov"><img src="icon/deepseek-copy-copy-copy.svg" alt="" class="mt-logo" /> DeepSeek</span>
+              <span class="mt-cap">
+                <span class="mt-stars"><span class="mt-label">推理</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span></span>
+                <span class="mt-stars"><span class="mt-label">多模态</span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">性价比</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span></span>
+              </span>
+              <span class="mt-link"><a href="#">https://platform.deepseek.com</a></span>
+              <span class="mt-price">输入 ¥0.025/1M（缓存命中）<br/>输入 ¥3.00/1M（未命中）<br/>输出 ¥6.00/1M</span>
+            </div>
+            <div class="mt-row">
+              <span class="mt-hot">gemini-3.1-pro</span>
+              <span class="mt-prov"><img src="icon/logo_google.svg" alt="" class="mt-logo" /> Google</span>
+              <span class="mt-cap">
+                <span class="mt-stars"><span class="mt-label">推理</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">多模态</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">性价比</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span></span>
+              </span>
+              <span class="mt-link"><a href="#">https://aistudio.google.com</a></span>
+              <span class="mt-price">输入 ¥0.02/1M（缓存命中）<br/>输入 ¥1.00/1M（未命中）<br/>输出 ¥2.00/1M</span>
+            </div>
+            <div class="mt-row">
+              <span class="mt-hot">gpt-5.5/pro</span>
+              <span class="mt-prov"><img src="icon/openai.svg" alt="" class="mt-logo" /> OpenAI</span>
+              <span class="mt-cap">
+                <span class="mt-stars"><span class="mt-label">推理</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">多模态</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span></span>
+                <span class="mt-stars"><span class="mt-label">性价比</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+              </span>
+              <span class="mt-link"><a href="#">https://platform.openai.com</a></span>
+              <span class="mt-price">输入 $5.00/1M<br/>输出 $20.00/1M</span>
+            </div>
+            <div class="mt-row">
+              <span class="mt-hot">gpt-5.4</span>
+              <span class="mt-prov"><img src="icon/openai.svg" alt="" class="mt-logo" /> OpenAI</span>
+              <span class="mt-cap">
+                <span class="mt-stars"><span class="mt-label">推理</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">多模态</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">性价比</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span></span>
+              </span>
+              <span class="mt-link"><a href="#">https://platform.openai.com</a></span>
+              <span class="mt-price">输入 $0.15/1M<br/>输出 $0.60/1M</span>
+            </div>
+            <div class="mt-row">
+              <span class="mt-hot">gpt-image-2</span>
+              <span class="mt-prov"><img src="icon/openai.svg" alt="" class="mt-logo" /> OpenAI</span>
+              <span class="mt-cap">
+                <span class="mt-stars"><span class="mt-label">推理</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">多模态</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span></span>
+                <span class="mt-stars"><span class="mt-label">性价比</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+              </span>
+              <span class="mt-link"><a href="#">https://platform.openai.com</a></span>
+              <span class="mt-price">输入 $3.00/1M<br/>输出 $12.00/1M</span>
+            </div>
+            <div class="mt-row">
+              <span class="mt-hot">claude-sonnet-5</span>
+              <span class="mt-prov"><img src="icon/Anthropic.svg" alt="" class="mt-logo" /> Anthropic</span>
+              <span class="mt-cap">
+                <span class="mt-stars"><span class="mt-label">推理</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">多模态</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">性价比</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span></span>
+              </span>
+              <span class="mt-link"><a href="#">https://console.anthropic.com</a></span>
+              <span class="mt-price">输入 $3.00/1M<br/>输出 $15.00/1M</span>
+            </div>
+            <div class="mt-row">
+              <span class="mt-hot">claude-haiku-5</span>
+              <span class="mt-prov"><img src="icon/Anthropic.svg" alt="" class="mt-logo" /> Anthropic</span>
+              <span class="mt-cap">
+                <span class="mt-stars"><span class="mt-label">推理</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">多模态</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">性价比</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+              </span>
+              <span class="mt-link"><a href="#">https://console.anthropic.com</a></span>
+              <span class="mt-price">输入 $0.80/1M<br/>输出 $4.00/1M</span>
+            </div>
+            <div class="mt-row">
+              <span class="mt-hot">gemini-3.5-flash</span>
+              <span class="mt-prov"><img src="icon/logo_google.svg" alt="" class="mt-logo" /> Google</span>
+              <span class="mt-cap">
+                <span class="mt-stars"><span class="mt-label">推理</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">多模态</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">性价比</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+              </span>
+              <span class="mt-link"><a href="#">https://aistudio.google.com</a></span>
+              <span class="mt-price">输入 $0.15/1M<br/>输出 $0.60/1M</span>
+            </div>
+            <div class="mt-row">
+              <span class="mt-hot">gemini-3.5-pro</span>
+              <span class="mt-prov"><img src="icon/logo_google.svg" alt="" class="mt-logo" /> Google</span>
+              <span class="mt-cap">
+                <span class="mt-stars"><span class="mt-label">推理</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span></span>
+                <span class="mt-stars"><span class="mt-label">多模态</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span></span>
+                <span class="mt-stars"><span class="mt-label">性价比</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+              </span>
+              <span class="mt-link"><a href="#">https://aistudio.google.com</a></span>
+              <span class="mt-price">输入 $1.25/1M<br/>输出 $5.00/1M</span>
+            </div>
+            <div class="mt-row">
+              <span class="mt-hot">deepseek-v4-flash</span>
+              <span class="mt-prov"><img src="icon/deepseek-copy-copy-copy.svg" alt="" class="mt-logo" /> DeepSeek</span>
+              <span class="mt-cap">
+                <span class="mt-stars"><span class="mt-label">推理</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span></span>
+                <span class="mt-stars"><span class="mt-label">多模态</span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">性价比</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span></span>
+              </span>
+              <span class="mt-link"><a href="#">https://platform.deepseek.com</a></span>
+              <span class="mt-price">输入 ¥1.00/1M<br/>输出 ¥4.00/1M</span>
+            </div>
+            <div class="mt-row">
+              <span class="mt-hot">kimi-2.6</span>
+              <span class="mt-prov"><img src="icon/Kimi.svg" alt="" class="mt-logo" /> Moonshot</span>
+              <span class="mt-cap">
+                <span class="mt-stars"><span class="mt-label">推理</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">多模态</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">性价比</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span></span>
+              </span>
+              <span class="mt-link"><a href="#">https://platform.moonshot.cn</a></span>
+              <span class="mt-price">输入 ¥0.50/1M<br/>输出 ¥1.50/1M</span>
+            </div>
+            <div class="mt-row">
+              <span class="mt-hot">qwen3.1-max</span>
+              <span class="mt-prov"><img src="icon/Tongyi-Qianwen.svg" alt="" class="mt-logo" /> Alibaba</span>
+              <span class="mt-cap">
+                <span class="mt-stars"><span class="mt-label">推理</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">多模态</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">性价比</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span></span>
+              </span>
+              <span class="mt-link"><a href="#">https://dashscope.aliyun.com</a></span>
+              <span class="mt-price">输入 ¥10.00/1M<br/>输出 ¥40.00/1M</span>
+            </div>
+            <div class="mt-row">
+              <span class="mt-hot">qwen3.1-plus</span>
+              <span class="mt-prov"><img src="icon/Tongyi-Qianwen.svg" alt="" class="mt-logo" /> Alibaba</span>
+              <span class="mt-cap">
+                <span class="mt-stars"><span class="mt-label">推理</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">多模态</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">性价比</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span></span>
+              </span>
+              <span class="mt-link"><a href="#">https://dashscope.aliyun.com</a></span>
+              <span class="mt-price">输入 ¥0.80/1M<br/>输出 ¥2.00/1M</span>
+            </div>
+            <div class="mt-row">
+              <span class="mt-hot">hunyuan-turbo</span>
+              <span class="mt-prov"><img src="icon/腾讯混元.svg" alt="" class="mt-logo" /> Tencent</span>
+              <span class="mt-cap">
+                <span class="mt-stars"><span class="mt-label">推理</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">多模态</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">性价比</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span></span>
+              </span>
+              <span class="mt-link"><a href="#">https://cloud.tencent.com</a></span>
+              <span class="mt-price">输入 ¥1.00/1M<br/>输出 ¥4.00/1M</span>
+            </div>
+            <div class="mt-row">
+              <span class="mt-hot">claude-opus-5</span>
+              <span class="mt-prov"><img src="icon/Anthropic.svg" alt="" class="mt-logo" /> Anthropic</span>
+              <span class="mt-cap">
+                <span class="mt-stars"><span class="mt-label">推理</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span><span class="dot fill"></span></span>
+                <span class="mt-stars"><span class="mt-label">多模态</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+                <span class="mt-stars"><span class="mt-label">性价比</span><span class="dot fill"></span><span class="dot fill"></span><span class="dot empty"></span><span class="dot empty"></span><span class="dot empty"></span></span>
+              </span>
+              <span class="mt-link"><a href="#">https://console.anthropic.com</a></span>
+              <span class="mt-price">输入 $15.00/1M<br/>输出 $75.00/1M</span>
+            </div>
+          </div>
+          </div>
         </div>
       </div>
       </section>
@@ -298,7 +612,7 @@
             </label>
           </div>
           <div class="usage-group">
-            <span>20.2k / 1.0M  ·  剩余 979.8k</span>
+            <span class="usage-text">20.2k / 1.0M  ·  剩余 979.8k</span>
             <b></b>
           </div>
         </div>
@@ -310,6 +624,11 @@
           </button>
         </div>
       </section>
+
+      <!-- AI 免责挡板（隐形阻挡） -->
+      <div class="disclaimer-bar"></div>
+      <!-- AI 免责文字 -->
+      <div class="disclaimer-text">内容由AI生成，请注意甄别</div>
     </main>
 
     <!-- =============== 右栏 =============== -->
@@ -421,7 +740,7 @@
             </div>
           </div>
         </div>
-        <div class="file-path-bar" data-right-view="file">
+        <div class="file-path-bar hidden" data-right-view="file">
           <span class="file-path-text" title="d/GAFA/前端开发/daily-insight-board-mockup.html">d/GAFA/前端开发/daily-insight-board-mockup.html</span>
           <button class="file-path-btn" onclick="navigator.clipboard.writeText('d/GAFA/前端开发/daily-insight-board-mockup.html')" title="复制路径"><img src="icon/copy.svg" alt="" /></button>
           <button class="file-path-btn" title="打开文件夹"><img src="icon/folder-open.svg" alt="" /></button>
@@ -533,15 +852,200 @@
             </div>
           </div>
         </div>
-        <div class="file-path-bar" data-right-view="file">
+        <div class="file-path-bar hidden" data-right-view="file">
           <span class="file-path-text" title="d/GAFA/前端开发/daily-insight-board-mockup.html">d/GAFA/前端开发/daily-insight-board-mockup.html</span>
           <button class="file-path-btn" onclick="navigator.clipboard.writeText('d/GAFA/前端开发/daily-insight-board-mockup.html')" title="复制路径"><img src="icon/copy.svg" alt="" /></button>
           <button class="file-path-btn" title="打开文件夹"><img src="icon/folder-open.svg" alt="" /></button>
         </div>
       </div>
+
+      <!-- 日志面板 (新对话) -->
+      <div class="right-page hidden" data-right-page="newchat">
+        <header class="right-header">
+          <div class="right-view-switch">
+            <button class="view-switch-btn" onclick="this.parentElement.classList.toggle('open')">
+              <span class="view-switch-label">日志</span>
+              <img src="icon/Frame-20.svg" alt="" />
+            </button>
+            <div class="view-switch-menu">
+              <button class="view-switch-item active" onclick="switchRightView('log', this)">日志</button>
+              <button class="view-switch-item" onclick="switchRightView('file', this)">文件查看</button>
+            </div>
+          </div>
+          <div class="log-filter-dropdown">
+            <button class="log-filter-btn" onclick="this.parentElement.classList.toggle('open')">
+              <span class="filter-label">类型</span>
+              <img src="icon/Frame-20.svg" alt="" />
+            </button>
+            <div class="log-filter-menu">
+              <button class="log-filter-item active" onclick="filterLogs('all', this)">全部</button>
+              <button class="log-filter-item" onclick="filterLogs('safe', this)">安全</button>
+              <button class="log-filter-item" onclick="filterLogs('danger', this)">危险报错</button>
+            </div>
+          </div>
+        </header>
+        <div class="log-list" data-right-view="log">
+          <div class="log-item"><time>09:15:01</time><span class="log-tag info">INFO</span><span class="log-text">新对话已创建</span></div>
+          <div class="log-item"><time>09:15:02</time><span class="log-tag info">INFO</span><span class="log-text">上下文窗口: 128K tokens 可用</span></div>
+          <div class="log-item"><time>09:15:03</time><span class="log-tag info">INFO</span><span class="log-text">模型: deepseek-v4-pro 已就绪</span></div>
+          <div class="log-item"><time>09:15:04</time><span class="log-tag info">INFO</span><span class="log-text">等待用户输入...</span></div>
+        </div>
+        <div class="log-list hidden" data-right-view="file" style="flex:1 1 auto;min-height:0;"></div>
+      </div>
     </aside>
   </div>
 
   <script src="./script.js"></script>
+
+  <!-- 添加模型弹窗 -->
+  <div class="modal-overlay" id="add-model-modal">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3>添加模型</h3>
+        <button class="modal-close" onclick="closeAddModel()">×</button>
+      </div>
+      <div class="modal-tabs">
+        <button class="mtab active" onclick="switchAddMode(this)">预设</button>
+        <button class="mtab" onclick="switchAddMode(this)">自定义</button>
+      </div>
+      <!-- 预设模式 -->
+      <div class="modal-body" id="preset-body">
+        <div class="modal-field">
+          <label>提供商</label>
+          <div class="custom-select" id="custom-provider">
+            <div class="cs-trigger" onclick="this.parentElement.classList.toggle('open')">
+              <span class="cs-text">请选择</span>
+              <img src="data:image/svg+xml,%3Csvg width='29' height='29' viewBox='0 0 29 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.3331 10.6667L14.222 17.7779L7.11084 10.6667' stroke='%23484848' stroke-width='1.33333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="" class="cs-arrow" />
+            </div>
+            <div class="cs-drop" onclick="event.stopPropagation()">
+              <div class="cs-option" data-value="openai" onclick="selectProvider(this)"><img src="icon/openai.svg" alt="" class="cs-icon" /> OpenAI</div>
+              <div class="cs-option" data-value="anthropic" onclick="selectProvider(this)"><img src="icon/Anthropic.svg" alt="" class="cs-icon" /> Anthropic</div>
+              <div class="cs-option" data-value="deepseek" onclick="selectProvider(this)"><img src="icon/deepseek-copy-copy-copy.svg" alt="" class="cs-icon" /> DeepSeek</div>
+              <div class="cs-option" data-value="google" onclick="selectProvider(this)"><img src="icon/logo_google.svg" alt="" class="cs-icon" /> Google</div>
+              <div class="cs-option" data-value="moonshot" onclick="selectProvider(this)"><img src="icon/Kimi.svg" alt="" class="cs-icon" /> Moonshot</div>
+              <div class="cs-option" data-value="alibaba" onclick="selectProvider(this)"><img src="icon/Tongyi-Qianwen.svg" alt="" class="cs-icon" /> Alibaba</div>
+              <div class="cs-option" data-value="tencent" onclick="selectProvider(this)"><img src="icon/腾讯混元.svg" alt="" class="cs-icon" /> Tencent</div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-field">
+          <label>API Key</label>
+          <input type="password" placeholder="输入 API Key..." />
+        </div>
+        <div class="modal-field">
+          <label>默认模型</label>
+          <div class="custom-select" id="custom-model">
+            <div class="cs-trigger" onclick="this.parentElement.classList.toggle('open')">
+              <span class="cs-text">请先选择提供商</span>
+              <img src="data:image/svg+xml,%3Csvg width='29' height='29' viewBox='0 0 29 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.3331 10.6667L14.222 17.7779L7.11084 10.6667' stroke='%23484848' stroke-width='1.33333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="" class="cs-arrow" />
+            </div>
+            <div class="cs-drop" id="custom-model-drop" onclick="event.stopPropagation()"></div>
+          </div>
+        </div>
+      </div>
+      <!-- 自定义模式 -->
+      <div class="modal-body hidden" id="custom-body" style="display:none;">
+        <div class="modal-field">
+          <label>名称</label>
+          <input type="text" placeholder="根据 Base URL 自动生成" />
+        </div>
+        <div class="modal-field">
+          <label>Base URL</label>
+          <input type="text" value="https://api.deepseek.com" />
+        </div>
+        <div class="modal-field">
+          <label>API Key</label>
+          <input type="password" placeholder="sk-..." />
+        </div>
+        <div class="modal-field">
+          <label>默认模型</label>
+          <div class="custom-select" id="custom-model2">
+            <div class="cs-trigger" onclick="this.parentElement.classList.toggle('open')">
+              <span class="cs-text">请先输入 API Key</span>
+              <img src="data:image/svg+xml,%3Csvg width='29' height='29' viewBox='0 0 29 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.3331 10.6667L14.222 17.7779L7.11084 10.6667' stroke='%23484848' stroke-width='1.33333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="" class="cs-arrow" />
+            </div>
+            <div class="cs-drop" onclick="event.stopPropagation()"></div>
+          </div>
+        </div>
+        <div class="modal-field">
+          <label>上下文长度</label>
+          <input type="text" placeholder="例如 256000（可选）" />
+        </div>
+        <div class="modal-field">
+          <label>HTTP 标头</label>
+          <input type="text" placeholder="输入 JSON 格式的额外 HTTP 标头（可选）" />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-cancel" onclick="closeAddModel()">取消</button>
+        <button class="modal-submit">确认添加</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 模型管理弹窗 -->
+  <div class="modal-overlay" id="manage-model-modal">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3>模型管理</h3>
+        <button class="modal-close" onclick="closeManageModal()">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-field">
+          <label>Base URL</label>
+          <input type="text" value="https://api.deepseek.com" />
+        </div>
+        <div class="modal-field">
+          <label>提供商</label>
+          <div class="cs-trigger static">
+            <img src="icon/deepseek-copy-copy-copy.svg" alt="" class="cs-selected-icon" style="width:20px;height:20px;" />
+            <span class="cs-text selected">深度求索/DeepSeek</span>
+          </div>
+        </div>
+        <div class="modal-field">
+          <label>API Key</label>
+          <div class="key-input-wrap">
+            <input type="text" value="sk-d68bd***********************1141" readonly id="mgmt-key" />
+            <button class="key-toggle" onclick="toggleKeyIcon('mgmt-key',this)" title="显示/隐藏">
+              <img src="icon/eye-off.svg" alt="" class="key-toggle-icon" />
+            </button>
+          </div>
+        </div>
+        <div class="modal-field">
+          <label>默认模型</label>
+          <div class="custom-select">
+            <div class="cs-trigger" onclick="this.parentElement.classList.toggle('open')">
+              <span class="cs-text selected">deepseek-v4-pro</span>
+              <img src="data:image/svg+xml,%3Csvg width='29' height='29' viewBox='0 0 29 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.3331 10.6667L14.222 17.7779L7.11084 10.6667' stroke='%23484848' stroke-width='1.33333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="" class="cs-arrow" />
+            </div>
+            <div class="cs-drop" onclick="event.stopPropagation()">
+              <div class="cs-option" onclick="selectOption(this)">deepseek-v4-pro</div>
+              <div class="cs-option" onclick="selectOption(this)">deepseek-v4-flash</div>
+            </div>
+          </div>
+        </div>
+        <!-- 高级参数 -->
+        <div class="modal-field">
+          <div class="advanced-toggle" onclick="this.parentElement.classList.toggle('expanded')">
+            <span>高级参数</span><img src="icon/chevron-down.svg" alt="" class="adv-arrow" />
+          </div>
+          <div class="advanced-body">
+            <div class="modal-field">
+              <label>上下文长度</label>
+              <input type="text" placeholder="例如 256000（可选）" />
+            </div>
+            <div class="modal-field">
+              <label>HTTP 标头</label>
+              <input type="text" placeholder='{"Authorization":"Bearer xxx"}' />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-cancel" onclick="closeManageModal()">取消</button>
+        <button class="modal-submit" onclick="closeManageModal()">保存</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
