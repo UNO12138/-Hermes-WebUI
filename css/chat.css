@@ -39,7 +39,7 @@
 
 /* 用户消息 */
 .chat-page .user-row {
-  flex-direction: column; align-items: flex-end; gap: 2px; min-height: fit-content;
+  flex-direction: column; align-items: flex-end; gap: 6px; min-height: fit-content;
 }
 .chat-page .user-row .chat-bubble { flex-shrink: 0; }
 .chat-page .user-row .message-footer { margin-top: 0; }
@@ -113,12 +113,12 @@
 ================================================================ */
 .file-row { align-items: flex-start; }
 .file-card-wrapper {
-  display: flex; flex-direction: column; gap: 8px;
+  display: flex; flex-direction: column; gap: 6px;
   max-width: min(80%, 500px); width: 100%;
 }
 .file-card {
   display: flex; flex-direction: column; gap: 8px;
-  background: #f5f5f5; border-radius: 12px; padding: 14px 18px;
+  background: #f5f5f5; border-radius: 12px; padding: 12px 18px;
   width: 100%; cursor: pointer;
 }
 .file-card-top {
@@ -127,7 +127,7 @@
 .file-info {
   display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0;
 }
-.file-name { font-size: 14px; line-height: 20px; font-weight: 600; color: #000; }
+.file-name { font-size: 15px; line-height: 22px; font-weight: 400; color: #18181B; }
 .file-meta { font-size: 12px; line-height: 16px; color: #999; }
 .file-card-divider {
   height: 1px; background: #e3e3e3; margin: 0 -18px;
@@ -139,20 +139,24 @@
 .file-icon { flex-shrink: 0; }
 .file-icon img { width: 48px; height: 64px; }
 .file-card-actions {
-  display: flex; align-items: center; gap: 8px;
-  padding-left: 54px;
+  display: flex; align-items: center; gap: 16px;
+  padding-left: 16px;
+  opacity: 0; transition: opacity .15s ease;
+}
+.file-card-wrapper:hover .file-card-actions {
+  opacity: 1;
 }
 .file-card-actions time {
-  font-size: 12px; color: #999; margin-left: auto;
+  font-size: 12px; line-height: 12px; font-weight: 500; color: #999;
 }
 .fca-btn {
-  width: 28px; height: 28px;
+  width: 14px; height: 14px;
   display: flex; align-items: center; justify-content: center;
-  border-radius: 6px; cursor: pointer; border: 0; background: transparent;
+  cursor: pointer; border: 0; background: transparent;
+  padding: 0;
 }
-.fca-btn:hover { background: #eee; }
-.fca-btn img { width: 16px; height: 16px; }
-.fav-toggle-btn.faved img { filter: invert(37%) sepia(93%) saturate(2300%) hue-rotate(353deg) brightness(98%) contrast(95%); }
+.fca-btn img { width: 14px; height: 14px; }
+.fav-toggle-btn.faved img { opacity: 0.35; }
 
 /* ================================================================
    AI 免责挡板
