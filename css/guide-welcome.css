@@ -1,0 +1,180 @@
+/* ================================================================
+   guide-welcome.css — 首次登录引导欢迎页
+   Figma node 1-1703 像素级还原，整体缩放 ~0.6x 适配 Web
+================================================================ */
+
+/* 引导页：隐藏输入框 + 免责 + 模型选择器 */
+.app[data-current-page="guide"] .composer-box { display: none !important; }
+.app[data-current-page="guide"] .model-picker { display: none !important; }
+.app[data-current-page="guide"] .disclaimer-bar { display: none !important; }
+.app[data-current-page="guide"] .disclaimer-text { display: none !important; }
+.app[data-current-page="guide"] .chat-scroll { padding: 0 !important; }
+.app[data-current-page="guide"] .chat-inner { max-width: none !important; padding: 0 !important; }
+
+.chat-page[data-page="guide"] {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  flex: 1; overflow-y: auto; overflow-x: hidden; padding: 0;
+}
+
+/* ================================================================
+   整体包裹：标题 + 卡片固定宽度，不拆分
+================================================================ */
+.guide-welcome-wrap {
+  width: 828px; max-width: 100%; flex-shrink: 0;
+  margin-top: -24px;
+}
+
+/* ================================================================
+   欢迎标题
+   Figma 原始: 57px / 28px → 缩放后: 36px / 18px
+================================================================ */
+.guide-welcome-header {
+  position: relative; text-align: left; padding: 12px 0 40px;
+}
+.guide-welcome-header h1 {
+  margin: 0 0 10px;
+  font-size: 36px; font-weight: 700; letter-spacing: .04em; line-height: 1.2; color: #000;
+}
+.guide-welcome-header p {
+  margin: 0;
+  font-size: 18px; font-weight: 400; color: #686868;
+}
+.guide-start-btn {
+  position: absolute; right: 0; bottom: 64px;
+  width: 107px; height: 43px;
+  border-radius: 8px; background: #393939;
+  color: #fff; font-size: 17px; font-weight: 400; line-height: 43px;
+  border: 0; cursor: pointer; padding: 0; text-align: center;
+}
+.guide-start-btn:hover { background: #4a4a4a; }
+
+/* ================================================================
+   三张卡片容器
+   Figma 原始: 391 x 363, gap 43 → 缩放后: 260 x 240, gap 24
+================================================================ */
+.guide-cards {
+  display: flex; gap: 24px; justify-content: flex-start; align-items: stretch;
+}
+
+/* ================================================================
+   卡片通用
+================================================================ */
+.guide-card {
+  width: 260px; min-height: 240px; flex-shrink: 0;
+  border-radius: 24px; background: #fff;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+
+/* 卡片底部标题 — 叠在渐变之上，固定于底部 */
+.guide-card .gc-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 36px 20px 18px;
+  min-height: 66px;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.47) 15%, rgba(255,255,255,.92) 30%, rgba(255,255,255,1) 45%);
+  text-align: left; z-index: 2;
+}
+.guide-card .gc-caption h3 {
+  margin: 0 0 4px;
+  font-size: 16px; font-weight: 500; color: #484848;
+}
+.guide-card .gc-caption p {
+  margin: 0;
+  font-size: 13px; font-weight: 400; color: #484848;
+}
+
+/* ================================================================
+   卡片1: 快速启动任务 (Figma #1:1772)
+   错落排布：绝对定位，pill 交替出现在左+右 / 居中位置
+   pill 原始: 177.78×56.89 → 缩放后: 107×34px
+================================================================ */
+.guide-card.card-tasks {
+  overflow: hidden; position: relative;
+}
+.guide-card.card-tasks .gc-caption {
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.47) 5%, rgba(255,255,255,.92) 15%, rgba(255,255,255,1) 30%);
+}
+.guide-card.card-tasks .gc-pill {
+  position: absolute;
+  width: 107px; height: 34px; line-height: 34px; text-align: center;
+  padding: 0; border-radius: 20px;
+  font-size: 16px; font-weight: 400; color: #686868;
+  background: rgba(104,104,104,.1); cursor: pointer; white-space: nowrap;
+  transition: background .15s ease;
+}
+.guide-card.card-tasks .gc-pill.active {
+  background: rgba(245,127,23,.1); color: #F57F17;
+}
+
+/* 左右渐变遮罩 (Figma #1:1787 #1:1788) */
+.guide-card.card-tasks .gc-left-fade {
+  position: absolute; left: 0; top: 0; bottom: 0; width: 32px; z-index: 2;
+  background: linear-gradient(90deg, #fff 25%, transparent 100%); pointer-events: none;
+}
+.guide-card.card-tasks .gc-right-fade {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 32px; z-index: 2;
+  background: linear-gradient(270deg, #fff 25%, transparent 100%); pointer-events: none;
+}
+
+/* ================================================================
+   卡片2: 过程文件收藏 (Figma #1:1798)
+================================================================ */
+.guide-card.card-fav {
+  background: radial-gradient(circle at 85% 7%, rgba(245,127,23,.15) 0%, rgba(255,255,255,.15) 100%), #fff;
+  padding: 10px 14px 0;
+}
+.guide-card.card-fav .gc-fav-list {
+  background: #fff; border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.05);
+  padding: 10px; display: flex; flex-direction: column; gap: 6px;
+  flex: 1; margin-bottom: 70px;
+}
+.guide-card.card-fav .gc-fav-title {
+  font-size: 13px; font-weight: 400; color: #000; padding-bottom: 6px;
+  border-bottom: 1px solid rgba(221,221,221,.64);
+}
+.guide-card.card-fav .gc-fav-item {
+  display: flex; align-items: center; gap: 6px; padding: 4px 3px; border-radius: 3px;
+}
+.guide-card.card-fav .gc-fav-item.active {
+  background: #DDD; margin: 0 -3px; padding: 4px 6px; border-radius: 4px;
+}
+.guide-card.card-fav .gc-fav-dot {
+  width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0;
+}
+.guide-card.card-fav .gc-fav-dot.orange { background: #F57F17; }
+.guide-card.card-fav .gc-fav-dot.blue { background: #667eea; }
+.guide-card.card-fav .gc-fav-dot.green { background: #4ecdc4; }
+.guide-card.card-fav .gc-fav-name {
+  font-size: 12px; color: #484848; flex: 1;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.guide-card.card-fav .gc-fav-close {
+  width: 16px; height: 16px; display: flex; align-items: center; justify-content: center;
+  border-radius: 3px; border: 0; background: transparent; cursor: pointer;
+  font-size: 12px; color: #999; flex-shrink: 0;
+}
+.guide-card.card-fav .gc-fav-close:hover { background: #eee; }
+
+/* ================================================================
+   卡片3: 用量监控 (Figma #1:1828)
+================================================================ */
+.guide-card.card-usage {
+  background: radial-gradient(circle at 85% 7%, rgba(245,127,23,.15) 0%, rgba(255,255,255,.15) 100%), #fff;
+  padding: 18px 16px 0;
+}
+.guide-card.card-usage .gc-chart-bars {
+  display: flex; align-items: flex-end; justify-content: center; gap: 10px;
+  padding: 12px 0 0; margin-bottom: 70px;
+}
+.guide-card.card-usage .gc-bar {
+  width: 24px; display: flex; flex-direction: column; align-items: center;
+}
+.guide-card.card-usage .gc-bar-fill {
+  width: 24px; background: #F57F17;
+}
+.guide-card.card-usage .gc-bar-fill-top {
+  border-radius: 5px 5px 0 0;
+}

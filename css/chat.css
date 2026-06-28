@@ -1,0 +1,330 @@
+/* ================================================================
+   chat.css — 对话消息、气泡、文件卡片、新对话欢迎页
+================================================================ */
+
+.hidden { display: none !important; }
+.chat-page.hidden { display: none !important; }
+
+/* 聊天内容容器 */
+.chat-inner {
+  width: 100%; max-width: var(--chat-max);
+  margin: 0 auto; padding: 0 24px;
+  display: flex; flex-direction: column; gap: 16px; flex: 1;
+}
+.chat-page {
+  display: block; padding-bottom: 36px; width: 100%;
+}
+.chat-page > * { margin-bottom: 24px; }
+.chat-page > *:last-child { margin-bottom: 0; }
+
+/* 工具调用 */
+.tool-call {
+  display: flex; align-items: center;
+  min-height: 20px; padding-left: 0; margin-bottom: 24px;
+}
+.tool-call + .tool-call { margin-top: -22px; }
+.tool {
+  height: 20px;
+  display: inline-flex; align-items: center; gap: 4px;
+  color: var(--muted);
+  font-size: 12px; line-height: 20px; letter-spacing: 0;
+}
+.tool img { width: 10px; height: 10px; flex: 0 0 10px; }
+
+/* 聊天行 */
+.chat-row {
+  display: flex; width: 100%; margin-bottom: 24px !important;
+}
+.chat-row:last-child { margin-bottom: 0 !important; }
+
+/* 用户消息 */
+.chat-page .user-row {
+  flex-direction: column; align-items: flex-end; gap: 2px; min-height: fit-content;
+}
+.chat-page .user-row .chat-bubble { flex-shrink: 0; }
+.chat-page .user-row .message-footer { margin-top: 0; }
+
+/* AI 消息 */
+.assistant-row {
+  justify-content: flex-start; align-items: flex-start; gap: 6px;
+  position: relative; padding-left: 40px;
+}
+.message-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  position: absolute; left: 0; top: 2px;
+}
+.assistant-stack {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+  max-width: var(--bubble-max);
+}
+
+/* 气泡 */
+.chat-bubble {
+  width: fit-content; min-width: 40px; max-width: var(--bubble-max);
+  border-radius: 8px; padding: 12px 16px;
+  font-size: 15px; line-height: 22px; font-weight: 400; letter-spacing: 0;
+}
+.chat-bubble p {
+  margin: 0; font-size: 15px; line-height: 22px; font-weight: 400; letter-spacing: 0;
+  color: #18181B; overflow-wrap: anywhere;
+}
+.user-bubble { background: var(--user-bubble); color: #393939; max-width: 420px; }
+.user-bubble p { color: #393939; }
+.assistant-bubble { background: var(--assistant-bubble); }
+.assistant-bubble.wide { max-width: var(--bubble-max); }
+
+/* 思考过程 */
+.thought-title {
+  margin: 0; color: #484848;
+  font-size: 13px; line-height: 18px; font-weight: 400; letter-spacing: 0;
+  display: flex; align-items: center; gap: 6px;
+}
+.thought-title::before {
+  content: '';
+  display: inline-block; width: 0; height: 0;
+  border-top: 4px solid transparent; border-bottom: 4px solid transparent;
+  border-left: 6px solid #999; flex-shrink: 0;
+}
+.thought-divider { height: 1px; background: #e8e8e8; margin: 8px 12px; }
+
+/* 消息底部（操作 + 时间） */
+.message-meta {
+  display: flex; align-items: center; gap: 10px;
+  color: var(--soft); font-size: 12px; line-height: 12px; font-weight: 500;
+  opacity: 0; transition: opacity .15s ease;
+}
+.message-meta img { width: 14px; height: 14px; }
+.message-actions {
+  display: flex; gap: 10px; margin-left: 16px; min-height: 16px;
+  opacity: 0; transition: opacity .15s ease;
+}
+.message-actions img { width: 14px; height: 14px; cursor: pointer; }
+.message-footer {
+  display: flex; align-items: center; gap: 10px;
+  opacity: 0; transition: opacity .15s ease; margin-top: 4px;
+}
+.user-row .message-footer { justify-content: flex-end; }
+.chat-row:hover .message-meta,
+.chat-row:hover .message-actions,
+.chat-row:hover .message-footer { opacity: 1; }
+
+/* ================================================================
+   文件卡片（精简版）
+================================================================ */
+.file-row { align-items: flex-start; }
+.file-card {
+  display: flex; align-items: flex-start; gap: 16px;
+  background: #f5f5f5; border-radius: 12px; padding: 14px 18px;
+  max-width: min(80%, 500px); width: 100%; cursor: pointer;
+}
+.file-info {
+  display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0;
+}
+.file-name { font-size: 14px; line-height: 20px; font-weight: 600; color: #000; }
+.file-meta { font-size: 12px; line-height: 16px; color: #999; }
+.file-path {
+  font-size: 12px; line-height: 16px; color: #999;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.file-icon { flex-shrink: 0; }
+.file-icon img { width: 48px; height: 64px; }
+
+/* ================================================================
+   AI 免责挡板
+================================================================ */
+.disclaimer-bar {
+  position: absolute; bottom: 0; left: 0; right: 0; margin: 0 auto;
+  width: 100%; max-width: var(--chat-max); height: 40px;
+  background: #fff; z-index: 5;
+}
+.disclaimer-text {
+  position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%);
+  font-size: 12px; line-height: 16px; color: #999; z-index: 15;
+  white-space: nowrap; padding: 4px 0;
+}
+
+/* ================================================================
+   新对话欢迎页
+================================================================ */
+.newchat-welcome {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; height: 100%; text-align: center; padding: 48px;
+}
+.newchat-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: linear-gradient(135deg, #667eea, #764ba2); margin-bottom: 24px;
+}
+.newchat-welcome h2 {
+  margin: 0 0 8px; font-size: 18px; line-height: 26px; font-weight: 700; color: #000;
+}
+.newchat-welcome p { margin: 0; font-size: 14px; line-height: 20px; color: #999; }
+
+.chat-page[data-page="newchat"] {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: flex-start; flex: 1;
+  padding-top: 22vh;
+}
+.newchat-greeting { padding: 0 48px; text-align: center; }
+.newchat-greeting h1 {
+  margin: 0 0 32px; font-size: 30px; line-height: 38px; font-weight: 400; color: #000;
+}
+.task-frameworks {
+  padding: 0; display: flex; flex-direction: column; align-items: flex-start;
+  width: fit-content;
+}
+.fw-row {
+  display: flex; align-items: flex-start; gap: 18px; margin-bottom: 36px;
+}
+.fw-label {
+  font-size: 16px; line-height: 32px; font-weight: 500; color: #999;
+  white-space: nowrap; flex-shrink: 0; min-width: 78px;
+}
+.fw-pills { display: grid; grid-template-columns: repeat(5, auto); gap: 10px; }
+.fw-pill {
+  padding: 6px 20px; border-radius: 20px;
+  font-size: 15px; line-height: 24px; color: #686868;
+  background: #f5f5f5; cursor: pointer;
+  transition: all .15s ease; white-space: nowrap; text-align: center; min-width: 120px;
+}
+.fw-pill:hover { background: #eee; }
+.fw-pill.active { background: #fff3e0; color: #f57f17; }
+
+/* ================================================================
+   对话3: 新手入门指引 — 任务清单卡片（原始类名，scoped）
+================================================================ */
+[data-page="guidechat"] .guide-card {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 16px 20px;
+  max-width: min(85%, 500px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border: none;
+  box-shadow: none;
+}
+[data-page="guidechat"] .guide-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+[data-page="guidechat"] .guide-card-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+[data-page="guidechat"] .guide-card-title {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #000;
+}
+[data-page="guidechat"] .guide-card-desc {
+  margin: 0;
+  font-size: 13px;
+  line-height: 20px;
+  color: #484848;
+}
+[data-page="guidechat"] .guide-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+[data-page="guidechat"] .guide-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+[data-page="guidechat"] .guide-step.active {
+  background: #f57f17;
+}
+[data-page="guidechat"] .guide-step.active .step-num {
+  background: #fff;
+  color: #f57f17;
+}
+[data-page="guidechat"] .guide-step.active .step-text {
+  color: #fff;
+}
+[data-page="guidechat"] .step-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  color: #686868;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+[data-page="guidechat"] .guide-step.completed .step-num {
+  background: #f57f17;
+  color: transparent;
+  font-size: 0;
+}
+[data-page="guidechat"] .guide-step.completed .step-num::after {
+  content: '✓';
+  font-size: 12px;
+  color: #fff;
+  font-weight: 700;
+}
+[data-page="guidechat"] .step-text {
+  font-size: 13px;
+  line-height: 18px;
+  color: #484848;
+}
+[data-page="guidechat"] .guide-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+}
+[data-page="guidechat"] .guide-btns {
+  display: flex;
+  gap: 8px;
+}
+[data-page="guidechat"] .guide-progress {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #f57f17;
+}
+[data-page="guidechat"] .guide-next-btn {
+  padding: 6px 20px;
+  border-radius: 9px;
+  background: transparent;
+  color: #686868;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 500;
+  border: 1.5px solid #d5d5d5;
+  cursor: pointer;
+}
+[data-page="guidechat"] .guide-next-btn:hover {
+  border-color: #bbb;
+  color: #666;
+}
+[data-page="guidechat"] .guide-guide-btn {
+  padding: 6px 20px;
+  border-radius: 9px;
+  background: #f57f17;
+  color: #fff;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 500;
+  border: 0;
+  cursor: pointer;
+}
+[data-page="guidechat"] .guide-guide-btn:hover {
+  background: #e67300;
+}
+
+/* 动效降级 */

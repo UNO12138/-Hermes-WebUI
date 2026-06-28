@@ -1,0 +1,83 @@
+/* ================================================================
+   tour.css — 新手引导遮罩+弹窗系统
+================================================================ */
+
+/* 遮罩层：全屏黑色半透明，box-shadow 大法挖洞 */
+.tour-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  pointer-events: auto;
+}
+.tour-cutout {
+  position: absolute;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.36);
+  pointer-events: none;
+}
+
+/* ================================================================
+   弹窗卡片
+   Figma: 白色圆角 #FFF borderRadius=14.22 → 9px
+================================================================ */
+.tour-popup {
+  position: absolute;
+  background: #fff;
+  border-radius: 9px;
+  padding: 24px 28px 20px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.15);
+  pointer-events: auto;
+  max-width: 360px;
+  z-index: 10000;
+}
+.tour-popup-title {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+}
+.tour-popup-desc {
+  margin: 0 0 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #686868;
+  line-height: 1.5;
+}
+.tour-popup-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.tour-popup-skip {
+  background: none; border: 0;
+  font-size: 14px; color: #999; cursor: pointer;
+  padding: 6px 0;
+}
+.tour-popup-skip:hover { color: #666; }
+.tour-popup-next {
+  padding: 8px 24px;
+  border-radius: 5px;
+  background: #F57F17;
+  color: #fff; font-size: 14px; font-weight: 400;
+  border: 0; cursor: pointer;
+}
+.tour-popup-next:hover { background: #e67300; }
+
+/* 弹窗箭头 */
+.tour-popup::after {
+  content: '';
+  position: absolute;
+  width: 0; height: 0;
+}
+.tour-popup.arrow-down::after {
+  top: 100%; left: 50%; transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #fff;
+}
+.tour-popup.arrow-up::after {
+  bottom: 100%; left: 50%; transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #fff;
+}
