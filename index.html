@@ -4,7 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hermes WebUI - Figma Pixel</title>
-  <link rel="stylesheet" href="./styles.css?v=3" />
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/chat.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/models.css" />
+  <link rel="stylesheet" href="./css/usage.css" />
+  <link rel="stylesheet" href="./css/guide-welcome.css" />
+  <link rel="stylesheet" href="./css/tour.css" />
 </head>
 <body>
   <div class="app" data-left="open" data-right="open">
@@ -28,14 +34,13 @@
       </div>
 
       <ul class="recent-list">
-        <li class="recent-item active" data-chat="figma">
-          <div class="recent-active-bg"></div>
+        <li class="recent-item" data-chat="figma">
           <span>Figma网页设计画板尺寸建议</span>
         </li>
         <li class="recent-item" data-chat="insight">
           <span>兴趣报告采集网页</span>
         </li>
-        <li class="recent-item" data-chat="guide">
+        <li class="recent-item" data-chat="guidechat">
           <span>WebUI 新手入门指引</span>
         </li>
       </ul>
@@ -48,14 +53,14 @@
       <nav class="left-nav" aria-label="主导航">
         <a href="#" class="nav-hit"><img src="icon/Frame-5.svg" alt="" /><span>任务</span></a>
         <a href="#" class="nav-hit" data-chat="models"><img src="icon/Frame-4.svg" alt="" /><span>模型</span></a>
-        <a href="#" class="nav-hit"><img src="icon/Frame-3.svg" alt="" /><span>用量监控</span></a>
-        <a href="#" class="nav-hit"><img src="icon/Frame-2.svg" alt="" /><span>记忆</span></a>
+        <a href="#" class="nav-hit" data-chat="usage"><img src="icon/Frame-3.svg" alt="" /><span>用量监控</span></a>
+        <a href="#" class="nav-hit tour-step-memory"><img src="icon/Frame-2.svg" alt="" /><span>记忆</span></a>
       </nav>
 
       <nav class="bottom-nav" aria-label="底部导航">
-        <a href="#" class="nav-hit"><img src="icon/Frame-1.svg" alt="" /><span>日志</span></a>
-        <a href="#" class="nav-hit"><img src="icon/Frame.svg" alt="" /><span>Hermes文档</span></a>
-        <a href="#" class="nav-hit" data-chat="guide"><img src="icon/guide-book.svg" alt="" /><span>新手引导</span></a>
+        <a href="#" class="nav-hit tour-step-logs"><img src="icon/Frame-1.svg" alt="" /><span>日志</span></a>
+        <a href="https://hermesagent.org.cn/" target="_blank" class="nav-hit tour-step-docs"><img src="icon/Frame.svg" alt="" /><span>Hermes文档</span></a>
+        <a href="#" class="nav-hit active" data-chat="guide"><img src="icon/guide-book.svg" alt="" /><span>新手引导</span></a>
       </nav>
 
       <div class="side-line"></div>
@@ -77,19 +82,24 @@
           <span class="model-text">deepseek-v4-pro</span>
           <img class="model-arrow" src="icon/Frame-20.svg" alt="" />
         </div>
-        <div class="title-text" id="chat-title">Figma网页设计画板尺寸建议</div>
+        <div class="title-text" id="chat-title">新对话</div>
         <button class="top-icon right-toggle" data-right-toggle aria-label="收起右侧栏">
           <img src="icon/Frame-17.svg" alt="" />
         </button>
+        <!-- 模型/用量页面时顶栏会注入按钮 -->
         <div class="models-top-btn" style="display:none;margin-left:auto;padding-right:16px;">
           <button class="models-add-btn" onclick="openAddModel()" style="position:static;">+ 添加模型</button>
+        </div>
+        <div class="usage-top-bar" style="display:none;margin-left:auto;padding-right:16px;align-items:center;gap:12px;">
+          <span class="usage-month">2026 - 5月 <img src="icon/chevron-down.svg" alt="" class="usage-month-arrow" /></span>
+          <button class="usage-refresh"><img src="icon/refresh.svg" alt="" class="usage-refresh-icon" /> 刷新</button>
         </div>
       </header>
 
       <section class="chat-scroll" aria-label="对话消息">
         <div class="chat-inner">
         <!-- 对话1: Figma网页设计画板尺寸建议 -->
-        <div class="chat-page" data-page="figma">
+        <div class="chat-page hidden" data-page="figma">
           <div class="tool-call" data-tool-call><span class="tool"><img src="icon/Frame-16.svg" alt="" />terminal</span></div>
           <div class="tool-call" data-tool-call><span class="tool"><img src="icon/Frame-16.svg" alt="" />terminal</span></div>
 
@@ -229,34 +239,105 @@
 
           <article class="chat-row assistant-row file-row">
             <img class="message-avatar" src="icon/source/image.png" alt="" />
-            <div class="file-card-wrapper">
-              <div class="file-card">
-                <div class="file-card-top">
-                  <div class="file-info">
-                    <span class="file-name">daily-insight-mockup.html</span>
-                    <span class="file-meta">文件1/共1</span>
-                  </div>
-                  <div class="file-icon">
-                    <img src="icon/html-file-icon.png" alt="HTML 文件" />
-                  </div>
-                </div>
-                <div class="file-card-divider"></div>
+            <div class="file-card">
+              <div class="file-info">
+                <span class="file-name">daily-insight-mockup.html</span>
+                <span class="file-meta">文件1/共1</span>
                 <span class="file-path">d/GAFA/前端开发/daily-insight-board...</span>
               </div>
-              <div class="file-card-actions">
-                <button class="fca-btn" title="复制"><img src="icon/source/Frame.svg" alt="" /></button>
-                <button class="fca-btn" title="打开文件夹"><img src="icon/source/Frame-1.svg" alt="" /></button>
-                <button class="fca-btn fav-toggle-btn" title="取消收藏" onclick="toggleFileFav(this)">
-                  <img src="icon/source/Frame-3.svg" alt="" />
-                </button>
-                <time>21:25</time>
+              <div class="file-icon">
+                <img src="icon/html-file-icon.png" alt="HTML 文件" />
               </div>
             </div>
           </article>
         </div>
 
-        <!-- 对话3: WebUI 新手入门指引 -->
-        <div class="chat-page hidden" data-page="guide">
+        <!-- 对话0: 新手引导 -->
+        <div class="chat-page" data-page="guide">
+          <div class="guide-welcome-wrap">
+          <div class="guide-welcome-header">
+            <h1>欢迎来到 Hermes WebUI</h1>
+            <p>这是你第一次登录，让我带你快速上手</p>
+            <button class="guide-start-btn" onclick="switchToNewChat();setTimeout(function(){startTourStep1()},400)">开始使用</button>
+          </div>
+          <div class="guide-cards">
+            <!-- 卡片1: 快速启动任务 -->
+            <div class="guide-card card-tasks">
+              <div class="gc-left-fade"></div>
+              <div class="gc-right-fade"></div>
+              <!-- 错落排布：第一行 左+右 -->
+              <span class="gc-pill" style="left:6px;top:21px;">网页自动化</span>
+              <span class="gc-pill" style="left:122px;top:21px;">脚本开发</span>
+              <!-- 错落排布：第二行 溢出左+居中active+溢出右 -->
+              <span class="gc-pill" style="left:-53px;top:63px;">创意设计</span>
+              <span class="gc-pill active" style="left:62px;top:63px;">文献研究</span>
+              <span class="gc-pill" style="left:177px;top:63px;">数据处理</span>
+              <!-- 错落排布：第三行 左+右 -->
+              <span class="gc-pill" style="left:6px;top:105px;">创意设计</span>
+              <span class="gc-pill" style="left:124px;top:105px;">数据处理</span>
+              <!-- 错落排布：第四行 溢出左+居中+溢出右 -->
+              <span class="gc-pill" style="left:-51px;top:147px;">法务专员</span>
+              <span class="gc-pill" style="left:64px;top:147px;">市场部门</span>
+              <span class="gc-pill" style="left:179px;top:147px;">产品经理</span>
+              <div class="gc-caption">
+                <h3>快速启动任务</h3>
+                <p>通过任务框架与角色快速建立工作流</p>
+              </div>
+            </div>
+
+            <!-- 卡片2: 过程文件收藏 -->
+            <div class="guide-card card-fav">
+              <div class="gc-fav-list">
+                <div class="gc-fav-title">收藏夹</div>
+                <div class="gc-fav-item">
+                  <div class="gc-fav-dot orange"></div>
+                  <span class="gc-fav-name">哪些文件信息用户最想知道.html</span>
+                  <button class="gc-fav-close">×</button>
+                </div>
+                <div class="gc-fav-item active">
+                  <div class="gc-fav-dot blue"></div>
+                  <span class="gc-fav-name">文件内容.md</span>
+                  <button class="gc-fav-close">×</button>
+                </div>
+                <div class="gc-fav-item">
+                  <div class="gc-fav-dot green"></div>
+                  <span class="gc-fav-name">文件第几次迭代.md</span>
+                  <button class="gc-fav-close">×</button>
+                </div>
+              </div>
+              <div class="gc-caption">
+                <h3>过程文件收藏</h3>
+                <p>任务过程产生的文件支持收藏管理</p>
+              </div>
+            </div>
+
+            <!-- 卡片3: 用量监控 -->
+            <div class="guide-card card-usage">
+              <div class="gc-chart-bars">
+                <!-- Bar 1: 深色在上圆角 + 半透明在下 -->
+                <div class="gc-bar"><div class="gc-bar-fill gc-bar-fill-top" style="height:23px;"></div><div class="gc-bar-fill" style="height:29px;opacity:.5;"></div></div>
+                <!-- Bar 2: 单段圆角 -->
+                <div class="gc-bar"><div class="gc-bar-fill gc-bar-fill-top" style="height:7px;opacity:.5;"></div></div>
+                <!-- Bar 3: 交换：longer在上 + shorter在下 -->
+                <div class="gc-bar"><div class="gc-bar-fill gc-bar-fill-top" style="height:45px;opacity:.3;"></div><div class="gc-bar-fill" style="height:19px;opacity:.3;"></div></div>
+                <!-- Bar 4: 深色在上圆角 + 半透明在下 -->
+                <div class="gc-bar"><div class="gc-bar-fill gc-bar-fill-top" style="height:16px;"></div><div class="gc-bar-fill" style="height:120px;opacity:.3;"></div></div>
+                <!-- Bar 5: 单段圆角 -->
+                <div class="gc-bar"><div class="gc-bar-fill gc-bar-fill-top" style="height:123px;"></div></div>
+                <!-- Bar 6: 单段圆角 -->
+                <div class="gc-bar"><div class="gc-bar-fill gc-bar-fill-top" style="height:52px;opacity:.3;"></div></div>
+              </div>
+              <div class="gc-caption">
+                <h3>用量监控</h3>
+                <p>实时监控token消耗量，用量透明</p>
+              </div>
+            </div>
+          </div>
+          </div><!-- /guide-welcome-wrap -->
+        </div>
+
+        <!-- 对话3: WebUI 新手入门指引 (原对话3保留) -->
+        <div class="chat-page hidden" data-page="guidechat">
           <article class="chat-row assistant-row">
             <img class="message-avatar" src="icon/source/image.png" alt="" />
             <div class="assistant-stack">
@@ -288,7 +369,7 @@
               <div class="guide-footer">
                 <span class="guide-progress" id="guide-progress">1/5</span>
                 <div class="guide-btns">
-                  <button class="guide-guide-btn" id="guide-guide-btn" onclick="guideReset()">操作引导</button>
+                  <button class="guide-guide-btn" id="guide-reset-btn" onclick="guideReset()">操作引导</button>
                   <button class="guide-next-btn" id="guide-next-btn" onclick="guideNext()">下一步</button>
                 </div>
               </div>
@@ -302,7 +383,6 @@
             <h1>早上好，糕冷</h1>
           </div>
           <div class="task-frameworks">
-            <!-- 任务框架 -->
             <div class="fw-row">
               <span class="fw-label">任务框架</span>
               <div class="fw-pills">
@@ -313,7 +393,6 @@
                 <span class="fw-pill">创意设计</span>
               </div>
             </div>
-            <!-- 身份细分 -->
             <div class="fw-row">
               <span class="fw-label">身份细分</span>
               <div class="fw-pills">
@@ -338,8 +417,6 @@
             <h1>模型</h1>
             <button class="models-add-btn" onclick="openAddModel()">+ 添加模型</button>
           </div>
-
-          <!-- 卡片区 -->
           <div class="models-cards">
             <div class="mp-card default">
               <div class="mp-card-head"><span class="mp-provider-name">DeepSeek</span><span class="mp-badge">当前默认</span></div>
@@ -380,8 +457,6 @@
               <div class="mp-actions"><a href="#" onclick="openManageModal();return false;">管理</a><a href="#">删除</a></div>
             </div>
           </div>
-
-          <!-- 搜索筛选栏 -->
           <div class="models-search-bar">
             <div class="ms-search-box">
               <img src="icon/search-icon.svg" alt="" class="ms-search-icon" />
@@ -396,8 +471,6 @@
               <div class="ms-drop"><span onclick="event.stopPropagation();filterModels('all',this)">全部</span><span onclick="event.stopPropagation();filterModels('推理',this)">推理</span><span onclick="event.stopPropagation();filterModels('多模态',this)">多模态</span><span onclick="event.stopPropagation();filterModels('性价比',this)">性价比</span></div>
             </div>
           </div>
-
-          <!-- 模型表格 -->
           <div class="models-table">
           <div class="mt-inner">
             <div class="mt-header">
@@ -593,6 +666,156 @@
           </div>
           </div>
         </div>
+
+        <!-- 对话6: 用量监控 -->
+        <div class="chat-page hidden" data-page="usage">
+          <div class="usage-page">
+            <div class="usage-header">
+              <h1>用量监控</h1>
+              <div class="usage-header-right">
+                <span class="usage-month">2026 - 5月 ▾</span>
+                <button class="usage-refresh">🔄 刷新</button>
+              </div>
+            </div>
+            <div class="usage-cards">
+              <div class="usage-card">
+                <span class="uc-label">5月消费 (按 UTC+0 时间)</span>
+                <span class="uc-value">¥352.15 CNY</span>
+                <span class="uc-sub">2026/6/1 - 2026/6/9</span>
+              </div>
+              <div class="usage-card">
+                <span class="uc-label">总 Token 数</span>
+                <span class="uc-value">4.5M</span>
+                <span class="uc-sub">3.9M 输入 / 541.1k 输出</span>
+              </div>
+              <div class="usage-card">
+                <span class="uc-label">总请求数</span>
+                <span class="uc-value">3,182</span>
+                <span class="uc-sub">日均 ~ 12.4</span>
+              </div>
+              <div class="usage-card">
+                <span class="uc-label">缓存命中率</span>
+                <span class="uc-value">96.6%</span>
+                <span class="uc-sub">110.3M Token</span>
+              </div>
+            </div>
+            <p class="usage-note">所有日期均按 UTC+0 时间显示，数据可能有 5 分钟延迟。</p>
+            <div class="usage-section">
+              <div class="usage-section-head"><h2>模型分布</h2></div>
+              <div class="usage-legend-row">
+                <div class="usage-legend">
+                  <span class="ul-dot" style="background:#667eea"></span> 输入
+                  <span class="ul-dot" style="background:#4ecdc4"></span> 输出
+                  <span class="ul-dot" style="background:#F9AD6B"></span> 缓存读取
+                </div>
+                <div class="usage-col-headers">
+                  <span>输入 + 缓存命中</span>
+                  <span>消费</span>
+                </div>
+              </div>
+              <div class="usage-bars">
+                <div class="ub-row">
+                  <span class="ub-model"><span class="ub-color" style="background:#f57f17"></span> deepseek-v4-pro</span>
+                  <div class="ub-bar">
+                    <div class="ub-seg" style="width:16%;background:#667eea"></div>
+                    <div class="ub-seg" style="width:2%;background:#4ecdc4"></div>
+                    <div class="ub-seg" style="width:72%;background:#F9AD6B"></div>
+                  </div>
+                  <span class="ub-stats">1.5M + 43.7M</span>
+                  <span class="ub-cost">¥35.33</span>
+                </div>
+                <div class="ub-row">
+                  <span class="ub-model"><span class="ub-color" style="background:#ffb74d"></span> deepseek-v4-flash</span>
+                  <div class="ub-bar">
+                    <div class="ub-seg" style="width:14%;background:#667eea"></div>
+                    <div class="ub-seg" style="width:2%;background:#4ecdc4"></div>
+                    <div class="ub-seg" style="width:64%;background:#F9AD6B"></div>
+                  </div>
+                  <span class="ub-stats">1.1M + 36.8M</span>
+                  <span class="ub-cost">¥15.48</span>
+                </div>
+                <div class="ub-row">
+                  <span class="ub-model"><span class="ub-color" style="background:#5c6bc0"></span> gpt-5.5</span>
+                  <div class="ub-bar">
+                    <div class="ub-seg" style="width:13%;background:#667eea"></div>
+                    <div class="ub-seg" style="width:8%;background:#4ecdc4"></div>
+                    <div class="ub-seg" style="width:42%;background:#F9AD6B"></div>
+                  </div>
+                  <span class="ub-stats">1.0M + 19.8M</span>
+                  <span class="ub-cost">$27.40</span>
+                </div>
+                <div class="ub-row">
+                  <span class="ub-model"><span class="ub-color" style="background:#9fa8da"></span> gpt-5.4</span>
+                  <div class="ub-bar">
+                    <div class="ub-seg" style="width:12%;background:#667eea"></div>
+                    <div class="ub-seg" style="width:2%;background:#4ecdc4"></div>
+                    <div class="ub-seg" style="width:22%;background:#F9AD6B"></div>
+                  </div>
+                  <span class="ub-stats">796.4K + 10.0M</span>
+                  <span class="ub-cost">$13.88</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 每日用量 -->
+            <div class="usage-section">
+              <h2>每日用量</h2>
+              <div class="usage-chart-legend">
+                <span><span class="ul-dot" style="background:#f57f17"></span> deepseek-v4-pro</span>
+                <span><span class="ul-dot" style="background:#ffb74d"></span> deepseek-v4-flash</span>
+                <span><span class="ul-dot" style="background:#5c6bc0"></span> gpt-5.5</span>
+                <span><span class="ul-dot" style="background:#9fa8da"></span> gpt-5.4</span>
+              </div>
+              <div class="usage-chart">
+                <div class="uc-yaxis">
+                  <span>$30</span><span>$15</span><span>$0</span>
+                </div>
+                <div class="uc-chart-area">
+                  <div class="uc-grid-lines">
+                    <span class="uc-grid"></span>
+                    <span class="uc-grid"></span>
+                    <span class="uc-grid"></span>
+                  </div>
+                  <div class="uc-bars">
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.1</span><span class="tt-total">总计 $5.6</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$2.0</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$1.4</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$1.1</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$1.1</span></div></div></div><div class="uc-bar-seg" style="height:7px;background:#f57f17"></div><div class="uc-bar-seg" style="height:5px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:4px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:4px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.2</span><span class="tt-total">总计 $9.8</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$3.4</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$2.5</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$2.0</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$2.0</span></div></div></div><div class="uc-bar-seg" style="height:12px;background:#f57f17"></div><div class="uc-bar-seg" style="height:9px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:7px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:7px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.3</span><span class="tt-total">总计 $15.2</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$5.3</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$3.9</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$3.1</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$2.8</span></div></div></div><div class="uc-bar-seg" style="height:19px;background:#f57f17"></div><div class="uc-bar-seg" style="height:14px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:11px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:10px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.4</span><span class="tt-total">总计 $7.0</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$2.5</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$1.7</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$1.4</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$1.4</span></div></div></div><div class="uc-bar-seg" style="height:9px;background:#f57f17"></div><div class="uc-bar-seg" style="height:6px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:5px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:5px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.5</span><span class="tt-total">总计 $12.7</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$4.5</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$3.1</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$2.5</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$2.5</span></div></div></div><div class="uc-bar-seg" style="height:16px;background:#f57f17"></div><div class="uc-bar-seg" style="height:11px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:9px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:9px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.6</span><span class="tt-total">总计 $18.3</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$6.5</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$4.5</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$3.7</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$3.7</span></div></div></div><div class="uc-bar-seg" style="height:23px;background:#f57f17"></div><div class="uc-bar-seg" style="height:16px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:13px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:13px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.7</span><span class="tt-total">总计 $8.4</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$2.8</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$2.2</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$1.7</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$1.7</span></div></div></div><div class="uc-bar-seg" style="height:10px;background:#f57f17"></div><div class="uc-bar-seg" style="height:8px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:6px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:6px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.8</span><span class="tt-total">总计 $11.2</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$3.9</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$2.8</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$2.2</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$2.2</span></div></div></div><div class="uc-bar-seg" style="height:14px;background:#f57f17"></div><div class="uc-bar-seg" style="height:10px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:8px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:8px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.9</span><span class="tt-total">总计 $16.9</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$5.9</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$4.2</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$3.4</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$3.4</span></div></div></div><div class="uc-bar-seg" style="height:21px;background:#f57f17"></div><div class="uc-bar-seg" style="height:15px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:12px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:12px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.10</span><span class="tt-total">总计 $14.1</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$5.1</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$3.4</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$2.8</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$2.8</span></div></div></div><div class="uc-bar-seg" style="height:18px;background:#f57f17"></div><div class="uc-bar-seg" style="height:12px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:10px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:10px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.11</span><span class="tt-total">总计 $19.7</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$6.8</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$5.1</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$3.9</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$3.9</span></div></div></div><div class="uc-bar-seg" style="height:24px;background:#f57f17"></div><div class="uc-bar-seg" style="height:18px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:14px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:14px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.12</span><span class="tt-total">总计 $10.7</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$3.7</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$2.8</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$2.2</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$2.0</span></div></div></div><div class="uc-bar-seg" style="height:13px;background:#f57f17"></div><div class="uc-bar-seg" style="height:10px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:8px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:7px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.13</span><span class="tt-total">总计 $21.4</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$7.6</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$5.3</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$4.2</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$4.2</span></div></div></div><div class="uc-bar-seg" style="height:27px;background:#f57f17"></div><div class="uc-bar-seg" style="height:19px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:15px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:15px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.14</span><span class="tt-total">总计 $24.5</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$8.4</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$6.2</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$4.8</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$5.1</span></div></div></div><div class="uc-bar-seg" style="height:30px;background:#f57f17"></div><div class="uc-bar-seg" style="height:22px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:17px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:18px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.15</span><span class="tt-total">总计 $28.4</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$9.8</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$7.0</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$5.6</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$5.9</span></div></div></div><div class="uc-bar-seg" style="height:35px;background:#f57f17"></div><div class="uc-bar-seg" style="height:25px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:20px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:21px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.16</span><span class="tt-total">总计 $12.7</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$4.5</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$3.1</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$2.5</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$2.5</span></div></div></div><div class="uc-bar-seg" style="height:16px;background:#f57f17"></div><div class="uc-bar-seg" style="height:11px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:9px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:9px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.17</span><span class="tt-total">总计 $26.7</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$9.3</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$6.8</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$5.3</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$5.3</span></div></div></div><div class="uc-bar-seg" style="height:33px;background:#f57f17"></div><div class="uc-bar-seg" style="height:24px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:19px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:19px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.18</span><span class="tt-total">总计 $35.2</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$12.4</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$8.7</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$7.0</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$7.0</span></div></div></div><div class="uc-bar-seg" style="height:44px;background:#f57f17"></div><div class="uc-bar-seg" style="height:31px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:25px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:25px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.19</span><span class="tt-total">总计 $17.4</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$6.2</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$4.5</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$3.4</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$3.4</span></div></div></div><div class="uc-bar-seg" style="height:22px;background:#f57f17"></div><div class="uc-bar-seg" style="height:16px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:12px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:12px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.20</span><span class="tt-total">总计 $31.2</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$11.0</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$7.9</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$6.2</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$6.2</span></div></div></div><div class="uc-bar-seg" style="height:39px;background:#f57f17"></div><div class="uc-bar-seg" style="height:28px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:22px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:22px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.21</span><span class="tt-total">总计 $22.5</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$7.9</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$5.6</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$4.5</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$4.5</span></div></div></div><div class="uc-bar-seg" style="height:28px;background:#f57f17"></div><div class="uc-bar-seg" style="height:20px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:16px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:16px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.22</span><span class="tt-total">总计 $33.8</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$11.8</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$8.4</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$6.8</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$6.8</span></div></div></div><div class="uc-bar-seg" style="height:42px;background:#f57f17"></div><div class="uc-bar-seg" style="height:30px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:24px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:24px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.23</span><span class="tt-total">总计 $38.5</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$13.5</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$9.6</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$7.6</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$7.9</span></div></div></div><div class="uc-bar-seg" style="height:48px;background:#f57f17"></div><div class="uc-bar-seg" style="height:34px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:27px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:28px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.24</span><span class="tt-total">总计 $29.5</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$10.4</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$7.3</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$5.9</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$5.9</span></div></div></div><div class="uc-bar-seg" style="height:37px;background:#f57f17"></div><div class="uc-bar-seg" style="height:26px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:21px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:21px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.25</span><span class="tt-total">总计 $42.5</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$14.9</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$10.7</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$8.4</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$8.4</span></div></div></div><div class="uc-bar-seg" style="height:53px;background:#f57f17"></div><div class="uc-bar-seg" style="height:38px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:30px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:30px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.26</span><span class="tt-total">总计 $36.6</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$12.9</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$9.0</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$7.3</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$7.3</span></div></div></div><div class="uc-bar-seg" style="height:46px;background:#f57f17"></div><div class="uc-bar-seg" style="height:32px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:26px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:26px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.27</span><span class="tt-total">总计 $47.5</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$16.6</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$11.8</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$9.6</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$9.6</span></div></div></div><div class="uc-bar-seg" style="height:59px;background:#f57f17"></div><div class="uc-bar-seg" style="height:42px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:34px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:34px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.28</span><span class="tt-total">总计 $52.6</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$18.3</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$13.2</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$10.4</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$10.7</span></div></div></div><div class="uc-bar-seg" style="height:65px;background:#f57f17"></div><div class="uc-bar-seg" style="height:47px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:37px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:38px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.29</span><span class="tt-total">总计 $43.6</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$15.2</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$11.0</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$8.7</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$8.7</span></div></div></div><div class="uc-bar-seg" style="height:54px;background:#f57f17"></div><div class="uc-bar-seg" style="height:39px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:31px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:31px;background:#9fa8da"></div></div></div>
+                    <div class="uc-day"><div class="uc-bar-stack"><div class="uc-tooltip"><div class="tt-header"><span class="tt-date">2026.6.30</span><span class="tt-total">总计 $5.9</span></div><div class="tt-models"><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#f57f17"></span>deepseek-v4-pro</span><span class="tt-model-price">$2.0</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#ffb74d"></span>deepseek-v4-flash</span><span class="tt-model-price">$1.4</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#5c6bc0"></span>gpt-5.5</span><span class="tt-model-price">$1.1</span></div><div class="tt-model"><span class="tt-model-name"><span class="tt-dot" style="background:#9fa8da"></span>gpt-5.4</span><span class="tt-model-price">$1.4</span></div></div></div><div class="uc-bar-seg" style="height:7px;background:#f57f17"></div><div class="uc-bar-seg" style="height:5px;background:#ffb74d"></div><div class="uc-bar-seg" style="height:4px;background:#5c6bc0"></div><div class="uc-bar-seg" style="height:5px;background:#9fa8da"></div></div></div>
+                  </div>
+                  <div class="uc-xaxis">
+                    <span>6-1</span><span>6-30</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       </section>
 
@@ -606,13 +829,13 @@
               <span>deepseek-v4-pro</span>
               <img src="icon/Frame-16.svg" alt="" />
             </button>
-            <button class="tool-btn small"><img src="icon/Frame-13.svg" alt="" /></button>
+            <button class="tool-btn small" id="tour-tool-toggle-area"><img src="icon/Frame-13.svg" alt="" /></button>
             <label class="switch-label" data-tool-toggle title="显示工具调用">
               <span class="switch"><i></i></span>
             </label>
           </div>
           <div class="usage-group">
-            <span class="usage-text">20.2k / 1.0M  ·  剩余 979.8k</span>
+            <span>20.2k / 1.0M  ·  剩余 979.8k</span>
             <b></b>
           </div>
         </div>
@@ -625,9 +848,8 @@
         </div>
       </section>
 
-      <!-- AI 免责挡板（隐形阻挡） -->
+      <!-- AI 免责挡板 -->
       <div class="disclaimer-bar"></div>
-      <!-- AI 免责文字 -->
       <div class="disclaimer-text">内容由AI生成，请注意甄别</div>
     </main>
 
@@ -635,8 +857,8 @@
     <aside class="right-panel" aria-label="右侧面板">
       <div class="resize-handle" data-resize-right aria-label="拖动调整右栏宽度"></div>
 
-      <!-- 日志/文件查看面板 (Figma对话) -->
-      <div class="right-page" data-right-page="figma">
+      <!-- 日志/文件查看 (Figma对话) -->
+      <div class="right-page hidden" data-right-page="figma">
         <header class="right-header">
           <div class="right-view-switch">
             <button class="view-switch-btn" onclick="this.parentElement.classList.toggle('open')">
@@ -720,34 +942,44 @@
           <div class="log-item"><time>21:26:16</time><span class="log-tag warn">WARNING</span><span class="log-text">Context utilization: 92% (118K/128K)</span></div>
           <div class="log-item"><time>21:26:17</time><span class="log-tag info">INFO</span><span class="log-text">Auto-summarization triggered</span></div>
         </div>
-        <div class="log-list hidden" data-right-view="file" style="background:#1a1a2e;flex:1 1 auto;min-height:0;overflow-y:auto;padding:16px;color:#fff;">
-          <div class="preview-header">
-            <div class="preview-icon"></div>
-            <div class="preview-title" style="color:#fff"><h3 style="color:#fff">Daily Insight Board</h3><p style="color:#a0a0b0">为你的兴趣自动收集最新网页报告</p></div>
-          </div>
-          <div class="preview-actions">
-            <span class="preview-date" style="color:#a0a0b0">06 Jun 2026 · 09:00 更新</span>
-            <button class="preview-btn secondary" style="background:rgba(255,255,255,.1);color:#fff">切换兴趣源</button>
-            <button class="preview-btn primary" style="background:#4d6bfe;color:#fff">生成今日简报</button>
-          </div>
-          <div class="preview-card" style="background:rgba(255,255,255,.05)">
-            <span class="preview-tag" style="background:rgba(255,255,255,.08);color:#a0a0b0">精选追踪 · KeyShot / Rhino / AI 视觉 / 视频创作</span>
-            <h2 class="preview-headline" style="color:#fff">把每天分散在各处的最新报告，整理成一张真正能看的情报面板。</h2>
-            <p class="preview-desc" style="color:#a0a0b0">这是一版偏高级感的深色首页草图。它适合后面接入自动采集脚本，把你关心的设计、渲染、AI 工具、视频制作资讯，按天汇总成统一网页。</p>
-            <div class="preview-stats">
-              <div class="stat"><span class="stat-num" style="color:#fff">42</span><span class="stat-label" style="color:#a0a0b0">今日已抓取条目</span></div>
-              <div class="stat"><span class="stat-num" style="color:#fff">09</span><span class="stat-label" style="color:#a0a0b0">高相关信号</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="file-path-bar hidden" data-right-view="file">
-          <span class="file-path-text" title="d/GAFA/前端开发/daily-insight-board-mockup.html">d/GAFA/前端开发/daily-insight-board-mockup.html</span>
-          <button class="file-path-btn" onclick="navigator.clipboard.writeText('d/GAFA/前端开发/daily-insight-board-mockup.html')" title="复制路径"><img src="icon/copy.svg" alt="" /></button>
-          <button class="file-path-btn" title="打开文件夹"><img src="icon/folder-open.svg" alt="" /></button>
-        </div>
+        <div class="log-list hidden" data-right-view="file" style="background:#fff;flex:1 1 auto;min-height:0;"></div>
       </div>
 
-      <!-- 文件查看面板 (兴趣报告对话) -->
+      <!-- 日志 (对话3: 新手入门指引) -->
+      <div class="right-page hidden" data-right-page="guidechat">
+        <header class="right-header">
+          <div class="right-view-switch">
+            <button class="view-switch-btn" onclick="this.parentElement.classList.toggle('open')">
+              <span class="view-switch-label">日志</span>
+              <img src="icon/Frame-20.svg" alt="" />
+            </button>
+            <div class="view-switch-menu">
+              <button class="view-switch-item active" onclick="switchRightView('log', this)">日志</button>
+              <button class="view-switch-item" onclick="switchRightView('file', this)">文件查看</button>
+            </div>
+          </div>
+          <div class="log-filter-dropdown">
+            <button class="log-filter-btn" onclick="this.parentElement.classList.toggle('open')">
+              <span class="filter-label">类型</span>
+              <img src="icon/Frame-20.svg" alt="" />
+            </button>
+            <div class="log-filter-menu">
+              <button class="log-filter-item active" onclick="filterLogs('all', this)">全部</button>
+              <button class="log-filter-item" onclick="filterLogs('safe', this)">安全</button>
+              <button class="log-filter-item" onclick="filterLogs('danger', this)">危险报错</button>
+            </div>
+          </div>
+        </header>
+        <div class="log-list" data-right-view="log">
+          <div class="log-item"><time>09:00:01</time><span class="log-tag info">INFO</span><span class="log-text">新手引导会话已启动</span></div>
+          <div class="log-item"><time>09:00:02</time><span class="log-tag info">INFO</span><span class="log-text">加载任务清单: WebUI 新手入门指引</span></div>
+          <div class="log-item"><time>09:00:03</time><span class="log-tag info">INFO</span><span class="log-text">模型: deepseek-v4-pro 已就绪</span></div>
+          <div class="log-item"><time>09:00:05</time><span class="log-tag info">INFO</span><span class="log-text">等待用户完成第一步任务...</span></div>
+        </div>
+        <div class="log-list hidden" data-right-view="file" style="background:#fff;flex:1 1 auto;min-height:0;"></div>
+      </div>
+
+      <!-- 文件查看 (兴趣报告对话) -->
       <div class="right-page hidden" data-right-page="insight">
         <header class="right-header">
           <div class="right-view-switch">
@@ -802,7 +1034,7 @@
         </div>
       </div>
 
-      <!-- 日志面板 (新手引导对话) -->
+      <!-- 日志 (新手引导) -->
       <div class="right-page hidden" data-right-page="guide">
         <header class="right-header">
           <div class="right-view-switch">
@@ -833,34 +1065,11 @@
           <div class="log-item"><time>09:00:03</time><span class="log-tag info">INFO</span><span class="log-text">模型: deepseek-v4-pro 已就绪</span></div>
           <div class="log-item"><time>09:00:05</time><span class="log-tag info">INFO</span><span class="log-text">等待用户完成第一步任务...</span></div>
         </div>
-        <div class="log-list hidden" data-right-view="file" style="background:#1a1a2e;flex:1 1 auto;min-height:0;overflow-y:auto;padding:16px;color:#fff;">
-          <div class="preview-header">
-            <div class="preview-icon"></div>
-            <div class="preview-title" style="color:#fff"><h3 style="color:#fff">使用指引</h3><p style="color:#a0a0b0">逐步掌握 Hermes WebUI 核心功能</p></div>
-          </div>
-          <div class="preview-actions">
-            <span class="preview-date" style="color:#a0a0b0">17 Jun 2026 · 09:00 更新</span>
-            <button class="preview-btn primary" style="background:#4d6bfe;color:#fff">开始体验</button>
-          </div>
-          <div class="preview-card" style="background:rgba(255,255,255,.05)">
-            <span class="preview-tag" style="background:rgba(255,255,255,.08);color:#a0a0b0">新手引导 · 5 步入门</span>
-            <h2 class="preview-headline" style="color:#fff">跟着任务清单，一步步解锁 Hermes 的核心能力。</h2>
-            <p class="preview-desc" style="color:#a0a0b0">从模型选择到日志查看，从记忆管理到工具调用，每个环节都有清晰的指引。</p>
-            <div class="preview-stats">
-              <div class="stat"><span class="stat-num" style="color:#fff">5</span><span class="stat-label" style="color:#a0a0b0">任务步骤</span></div>
-              <div class="stat"><span class="stat-num" style="color:#fff">~5min</span><span class="stat-label" style="color:#a0a0b0">预计用时</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="file-path-bar hidden" data-right-view="file">
-          <span class="file-path-text" title="d/GAFA/前端开发/daily-insight-board-mockup.html">d/GAFA/前端开发/daily-insight-board-mockup.html</span>
-          <button class="file-path-btn" onclick="navigator.clipboard.writeText('d/GAFA/前端开发/daily-insight-board-mockup.html')" title="复制路径"><img src="icon/copy.svg" alt="" /></button>
-          <button class="file-path-btn" title="打开文件夹"><img src="icon/folder-open.svg" alt="" /></button>
-        </div>
+        <div class="log-list hidden" data-right-view="file" style="background:#fff;flex:1 1 auto;min-height:0;"></div>
       </div>
 
-      <!-- 日志面板 (新对话) -->
-      <div class="right-page hidden" data-right-page="newchat">
+      <!-- 新对话右栏 -->
+      <div class="right-page" data-right-page="newchat">
         <header class="right-header">
           <div class="right-view-switch">
             <button class="view-switch-btn" onclick="this.parentElement.classList.toggle('open')">
@@ -895,7 +1104,11 @@
     </aside>
   </div>
 
-  <script src="./script.js"></script>
+  <script src="./js/core.js"></script>
+  <script src="./js/chat.js"></script>
+  <script src="./js/models.js"></script>
+  <script src="./js/usage.js"></script>
+  <script src="./js/tour.js"></script>
 
   <!-- 添加模型弹窗 -->
   <div class="modal-overlay" id="add-model-modal">
@@ -908,7 +1121,6 @@
         <button class="mtab active" onclick="switchAddMode(this)">预设</button>
         <button class="mtab" onclick="switchAddMode(this)">自定义</button>
       </div>
-      <!-- 预设模式 -->
       <div class="modal-body" id="preset-body">
         <div class="modal-field">
           <label>提供商</label>
@@ -943,7 +1155,6 @@
           </div>
         </div>
       </div>
-      <!-- 自定义模式 -->
       <div class="modal-body hidden" id="custom-body" style="display:none;">
         <div class="modal-field">
           <label>名称</label>
@@ -1024,7 +1235,6 @@
             </div>
           </div>
         </div>
-        <!-- 高级参数 -->
         <div class="modal-field">
           <div class="advanced-toggle" onclick="this.parentElement.classList.toggle('expanded')">
             <span>高级参数</span><img src="icon/chevron-down.svg" alt="" class="adv-arrow" />
