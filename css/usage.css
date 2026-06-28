@@ -2,7 +2,7 @@
    usage.css — 用量监控页面
 ================================================================ */
 
-.usage-page { padding: 24px 36px 24px; }
+.usage-page { padding: 24px 0 24px; max-width: 920px; margin: 0 auto; width: 100%; }
 .usage-header { display: flex; align-items: center; justify-content: space-between; }
 .usage-header h1 { margin: 0; font-size: 28px; font-weight: 700; color: #000; }
 .usage-header-right { display: flex; align-items: center; gap: 12px; }
