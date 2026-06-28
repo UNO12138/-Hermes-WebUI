@@ -112,22 +112,47 @@
    文件卡片（精简版）
 ================================================================ */
 .file-row { align-items: flex-start; }
+.file-card-wrapper {
+  display: flex; flex-direction: column; gap: 8px;
+  max-width: min(80%, 500px); width: 100%;
+}
 .file-card {
-  display: flex; align-items: flex-start; gap: 16px;
+  display: flex; flex-direction: column; gap: 8px;
   background: #f5f5f5; border-radius: 12px; padding: 14px 18px;
-  max-width: min(80%, 500px); width: 100%; cursor: pointer;
+  width: 100%; cursor: pointer;
+}
+.file-card-top {
+  display: flex; align-items: flex-start; gap: 16px;
 }
 .file-info {
   display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0;
 }
 .file-name { font-size: 14px; line-height: 20px; font-weight: 600; color: #000; }
 .file-meta { font-size: 12px; line-height: 16px; color: #999; }
+.file-card-divider {
+  height: 1px; background: #e3e3e3; margin: 0 -18px;
+}
 .file-path {
   font-size: 12px; line-height: 16px; color: #999;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .file-icon { flex-shrink: 0; }
 .file-icon img { width: 48px; height: 64px; }
+.file-card-actions {
+  display: flex; align-items: center; gap: 8px;
+  padding-left: 54px;
+}
+.file-card-actions time {
+  font-size: 12px; color: #999; margin-left: auto;
+}
+.fca-btn {
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 6px; cursor: pointer; border: 0; background: transparent;
+}
+.fca-btn:hover { background: #eee; }
+.fca-btn img { width: 16px; height: 16px; }
+.fav-toggle-btn.faved img { filter: invert(37%) sepia(93%) saturate(2300%) hue-rotate(353deg) brightness(98%) contrast(95%); }
 
 /* ================================================================
    AI 免责挡板

@@ -239,14 +239,25 @@
 
           <article class="chat-row assistant-row file-row">
             <img class="message-avatar" src="icon/source/image.png" alt="" />
-            <div class="file-card">
-              <div class="file-info">
-                <span class="file-name">daily-insight-mockup.html</span>
-                <span class="file-meta">文件1/共1</span>
+            <div class="file-card-wrapper">
+              <div class="file-card">
+                <div class="file-card-top">
+                  <div class="file-info">
+                    <span class="file-name">daily-insight-mockup.html</span>
+                    <span class="file-meta">文件1/共1</span>
+                  </div>
+                  <div class="file-icon">
+                    <img src="icon/html-file-icon.png" alt="HTML 文件" />
+                  </div>
+                </div>
+                <div class="file-card-divider"></div>
                 <span class="file-path">d/GAFA/前端开发/daily-insight-board...</span>
               </div>
-              <div class="file-icon">
-                <img src="icon/html-file-icon.png" alt="HTML 文件" />
+              <div class="file-card-actions">
+                <button class="fca-btn" title="复制"><img src="icon/source/Frame.svg" alt="" /></button>
+                <button class="fca-btn" title="打开文件夹"><img src="icon/source/Frame-1.svg" alt="" /></button>
+                <button class="fca-btn fav-toggle-btn" title="收藏" onclick="toggleFileFav(this)"><img src="icon/source/Frame-3.svg" alt="" /></button>
+                <time>21:25</time>
               </div>
             </div>
           </article>
